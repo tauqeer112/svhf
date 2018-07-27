@@ -274,8 +274,13 @@ public class Login extends javax.swing.JFrame {
             rs = pst.executeQuery();
             
             if (rs.next()) {
-                StudentInfo student = new StudentInfo();
-                student.setVisible(true);
+                MainPage mp = new MainPage();
+                if("STAFF".equals(priviledge))
+                {
+                mp.admincreate.setVisible(false);
+                mp.admindelete.setVisible(false);
+                }
+                mp.setVisible(true);
             } else {
                 JOptionPane.showMessageDialog(null,("username and password is incorrect"));
             }
