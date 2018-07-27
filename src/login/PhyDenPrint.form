@@ -212,7 +212,7 @@
                                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="0" pref="12" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="44" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -268,7 +268,7 @@
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace pref="24" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                               <Component id="jPanel15" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jPanel14" min="-2" max="-2" attributes="0"/>
@@ -494,7 +494,6 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Symbol" size="14" style="1"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="kk"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="stain">
@@ -502,7 +501,6 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Symbol" size="14" style="1"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="kk"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="cavity">
@@ -510,7 +508,6 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Symbol" size="14" style="1"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="kk"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="malocclusion">
@@ -518,7 +515,6 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Symbol" size="14" style="1"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="kk"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="dother">
@@ -526,7 +522,6 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Symbol" size="14" style="1"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="kk"/>
                           </Properties>
                         </Component>
                       </SubComponents>
@@ -681,7 +676,6 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Symbol" size="14" style="1"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="kk"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="dclass">
@@ -689,7 +683,6 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Symbol" size="14" style="1"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="kk"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="dteacher">
@@ -697,7 +690,6 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Symbol" size="14" style="1"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="kk"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="dgender">
@@ -705,7 +697,6 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Symbol" size="14" style="1"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="kk"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="dregno">
@@ -713,7 +704,6 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Symbol" size="14" style="1"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="kk"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="ddob">
@@ -721,7 +711,6 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Symbol" size="14" style="1"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="kk"/>
                           </Properties>
                         </Component>
                       </SubComponents>
@@ -1196,7 +1185,6 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Symbol" size="14" style="1"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="kk"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="weight">
@@ -1204,7 +1192,6 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Symbol" size="14" style="1"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="kk"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="chest">
@@ -1212,7 +1199,6 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Symbol" size="14" style="1"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="kk"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="abdomen">
@@ -1220,7 +1206,6 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Symbol" size="14" style="1"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="kk"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="skin1">
@@ -1228,7 +1213,6 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Symbol" size="14" style="1"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="kk"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="pother">
@@ -1236,7 +1220,6 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Symbol" size="14" style="1"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="kk"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="lefteye">
@@ -1244,7 +1227,6 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Symbol" size="14" style="1"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="kk"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="righteye">
@@ -1252,7 +1234,6 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Symbol" size="14" style="1"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="kk"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="leftwax">
@@ -1260,7 +1241,6 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Symbol" size="14" style="1"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="kk"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="rightwax">
@@ -1268,7 +1248,6 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Symbol" size="14" style="1"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="kk"/>
                           </Properties>
                         </Component>
                       </SubComponents>
@@ -1425,7 +1404,6 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Symbol" size="14" style="1"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="kk"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="pteacher">
@@ -1433,7 +1411,6 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Symbol" size="14" style="1"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="kk"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="pname">
@@ -1441,7 +1418,6 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Symbol" size="14" style="1"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="kk"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="pclass">
@@ -1449,7 +1425,6 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Symbol" size="14" style="1"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="kk"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="pgender">
@@ -1457,7 +1432,6 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Symbol" size="14" style="1"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="kk"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="pdob">
@@ -1465,7 +1439,6 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Symbol" size="14" style="1"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="kk"/>
                           </Properties>
                         </Component>
                       </SubComponents>

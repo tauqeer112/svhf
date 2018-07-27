@@ -309,19 +309,14 @@ g2.setTransform(originalTransform);
         jScrollPane2.setViewportView(jTextArea2);
 
         calculus.setFont(new java.awt.Font("Segoe UI Symbol", 1, 14)); // NOI18N
-        calculus.setText("kk");
 
         stain.setFont(new java.awt.Font("Segoe UI Symbol", 1, 14)); // NOI18N
-        stain.setText("kk");
 
         cavity.setFont(new java.awt.Font("Segoe UI Symbol", 1, 14)); // NOI18N
-        cavity.setText("kk");
 
         malocclusion.setFont(new java.awt.Font("Segoe UI Symbol", 1, 14)); // NOI18N
-        malocclusion.setText("kk");
 
         dother.setFont(new java.awt.Font("Segoe UI Symbol", 1, 14)); // NOI18N
-        dother.setText("kk");
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
@@ -418,22 +413,16 @@ g2.setTransform(originalTransform);
         jLabel43.setText("Date of Birth:");
 
         dname.setFont(new java.awt.Font("Segoe UI Symbol", 1, 14)); // NOI18N
-        dname.setText("kk");
 
         dclass.setFont(new java.awt.Font("Segoe UI Symbol", 1, 14)); // NOI18N
-        dclass.setText("kk");
 
         dteacher.setFont(new java.awt.Font("Segoe UI Symbol", 1, 14)); // NOI18N
-        dteacher.setText("kk");
 
         dgender.setFont(new java.awt.Font("Segoe UI Symbol", 1, 14)); // NOI18N
-        dgender.setText("kk");
 
         dregno.setFont(new java.awt.Font("Segoe UI Symbol", 1, 14)); // NOI18N
-        dregno.setText("kk");
 
         ddob.setFont(new java.awt.Font("Segoe UI Symbol", 1, 14)); // NOI18N
-        ddob.setText("kk");
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
@@ -533,7 +522,7 @@ g2.setTransform(originalTransform);
         dentalformLayout.setVerticalGroup(
             dentalformLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(dentalformLayout.createSequentialGroup()
-                .addContainerGap(24, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -553,7 +542,7 @@ g2.setTransform(originalTransform);
                         .addContainerGap()
                         .addComponent(dprint, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)))
-                .addGap(0, 12, Short.MAX_VALUE))
+                .addGap(0, 44, Short.MAX_VALUE))
         );
         panelformLayout.setVerticalGroup(
             panelformLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -640,34 +629,24 @@ g2.setTransform(originalTransform);
         jLabel4.setText("Abdomen:");
 
         height.setFont(new java.awt.Font("Segoe UI Symbol", 1, 14)); // NOI18N
-        height.setText("kk");
 
         weight.setFont(new java.awt.Font("Segoe UI Symbol", 1, 14)); // NOI18N
-        weight.setText("kk");
 
         chest.setFont(new java.awt.Font("Segoe UI Symbol", 1, 14)); // NOI18N
-        chest.setText("kk");
 
         abdomen.setFont(new java.awt.Font("Segoe UI Symbol", 1, 14)); // NOI18N
-        abdomen.setText("kk");
 
         skin1.setFont(new java.awt.Font("Segoe UI Symbol", 1, 14)); // NOI18N
-        skin1.setText("kk");
 
         pother.setFont(new java.awt.Font("Segoe UI Symbol", 1, 14)); // NOI18N
-        pother.setText("kk");
 
         lefteye.setFont(new java.awt.Font("Segoe UI Symbol", 1, 14)); // NOI18N
-        lefteye.setText("kk");
 
         righteye.setFont(new java.awt.Font("Segoe UI Symbol", 1, 14)); // NOI18N
-        righteye.setText("kk");
 
         leftwax.setFont(new java.awt.Font("Segoe UI Symbol", 1, 14)); // NOI18N
-        leftwax.setText("kk");
 
         rightwax.setFont(new java.awt.Font("Segoe UI Symbol", 1, 14)); // NOI18N
-        rightwax.setText("kk");
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -810,22 +789,16 @@ g2.setTransform(originalTransform);
         jLabel57.setText("Date of Birth:");
 
         pregno.setFont(new java.awt.Font("Segoe UI Symbol", 1, 14)); // NOI18N
-        pregno.setText("kk");
 
         pteacher.setFont(new java.awt.Font("Segoe UI Symbol", 1, 14)); // NOI18N
-        pteacher.setText("kk");
 
         pname.setFont(new java.awt.Font("Segoe UI Symbol", 1, 14)); // NOI18N
-        pname.setText("kk");
 
         pclass.setFont(new java.awt.Font("Segoe UI Symbol", 1, 14)); // NOI18N
-        pclass.setText("kk");
 
         pgender.setFont(new java.awt.Font("Segoe UI Symbol", 1, 14)); // NOI18N
-        pgender.setText("kk");
 
         pdob.setFont(new java.awt.Font("Segoe UI Symbol", 1, 14)); // NOI18N
-        pdob.setText("kk");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -918,7 +891,7 @@ g2.setTransform(originalTransform);
             .addGroup(physicalformLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(physicalformLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(jPanel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
