@@ -42,10 +42,11 @@ public class ListView extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         detal = new javax.swing.JTable();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         physical.setAutoCreateRowSorter(true);
-        physical.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        physical.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 204, 153), 1, true));
+        physical.setForeground(new java.awt.Color(0, 0, 255));
         physical.setGridColor(new java.awt.Color(0, 0, 0));
 
         org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, infoList, physical);
@@ -132,6 +133,9 @@ public class ListView extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Physical Reports", jPanel2);
+
+        jScrollPane2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 153), 1, true));
+        jScrollPane2.setForeground(new java.awt.Color(0, 0, 204));
 
         detal.setGridColor(new java.awt.Color(0, 0, 0));
 

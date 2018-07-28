@@ -10,8 +10,6 @@ package login;
 import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.PrintJob;
-import java.awt.Toolkit;
 import java.awt.geom.AffineTransform;
 import java.awt.print.PageFormat;
 import java.awt.print.Printable;
@@ -24,7 +22,7 @@ import javax.swing.*;
  *
  * @author Tauqeer
  */
-public class PhyDenPrint extends javax.swing.JFrame {
+public class PhyDenDelete extends javax.swing.JFrame {
 
      Connection conn = null;
     PreparedStatement pst = null;
@@ -69,7 +67,7 @@ g2.setTransform(originalTransform);
     /**
      * Creates new form PhyDenPrint
      */
-    public PhyDenPrint() {
+    public PhyDenDelete() {
         initComponents();
         conn = MysqlConnect.ConnectDB();
     }
@@ -91,7 +89,7 @@ g2.setTransform(originalTransform);
         getreg = new javax.swing.JTextField();
         displayrec = new javax.swing.JButton();
         panelform = new javax.swing.JPanel();
-        dprint = new javax.swing.JButton();
+        ddelete = new javax.swing.JButton();
         dentalform = new javax.swing.JPanel();
         jPanel13 = new javax.swing.JPanel();
         jLabel30 = new javax.swing.JLabel();
@@ -103,9 +101,6 @@ g2.setTransform(originalTransform);
         jLabel36 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         dadvice = new javax.swing.JTextArea();
-        jLabel2 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
         calculus = new javax.swing.JLabel();
         stain = new javax.swing.JLabel();
         cavity = new javax.swing.JLabel();
@@ -128,7 +123,7 @@ g2.setTransform(originalTransform);
         jPanel15 = new javax.swing.JPanel();
         jLabel44 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        pprint = new javax.swing.JButton();
+        pdelete = new javax.swing.JButton();
         physicalform = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
@@ -147,9 +142,6 @@ g2.setTransform(originalTransform);
         jLabel50 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
         padvice = new javax.swing.JTextArea();
-        jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
         jLabel4 = new javax.swing.JLabel();
         height = new javax.swing.JLabel();
         weight = new javax.swing.JLabel();
@@ -178,7 +170,7 @@ g2.setTransform(originalTransform);
         jPanel16 = new javax.swing.JPanel();
         jLabel58 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setPreferredSize(new java.awt.Dimension(1230, 811));
 
@@ -216,7 +208,7 @@ g2.setTransform(originalTransform);
 
         displayrec.setBackground(new java.awt.Color(51, 51, 255));
         displayrec.setFont(new java.awt.Font("Microsoft PhagsPa", 1, 24)); // NOI18N
-        displayrec.setText("DISPLAY RECORD");
+        displayrec.setText("DELETE RECORD");
         displayrec.setActionCommand("");
         displayrec.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -260,13 +252,13 @@ g2.setTransform(originalTransform);
         panelform.setBackground(new java.awt.Color(102, 204, 0));
         panelform.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        dprint.setBackground(new java.awt.Color(51, 51, 255));
-        dprint.setFont(new java.awt.Font("Microsoft PhagsPa", 1, 18)); // NOI18N
-        dprint.setText("PRINT");
-        dprint.setActionCommand("");
-        dprint.addActionListener(new java.awt.event.ActionListener() {
+        ddelete.setBackground(new java.awt.Color(51, 51, 255));
+        ddelete.setFont(new java.awt.Font("Microsoft PhagsPa", 1, 18)); // NOI18N
+        ddelete.setText("DELETE");
+        ddelete.setActionCommand("");
+        ddelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dprintActionPerformed(evt);
+                ddeleteActionPerformed(evt);
             }
         });
 
@@ -301,13 +293,6 @@ g2.setTransform(originalTransform);
         dadvice.setWrapStyleWord(true);
         jScrollPane4.setViewportView(dadvice);
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setText("SIGNATURE OF DENTIST");
-
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane2.setViewportView(jTextArea2);
-
         calculus.setFont(new java.awt.Font("Segoe UI Symbol", 1, 14)); // NOI18N
 
         stain.setFont(new java.awt.Font("Segoe UI Symbol", 1, 14)); // NOI18N
@@ -339,17 +324,10 @@ g2.setTransform(originalTransform);
                         .addComponent(malocclusion, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(dother, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                        .addComponent(jLabel36)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(55, 55, 55))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jScrollPane2)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(123, 123, 123))))
+                .addComponent(jLabel36)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(55, 55, 55))
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -373,22 +351,15 @@ g2.setTransform(originalTransform);
                                     .addComponent(cavity, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(22, 22, 22)
                                 .addComponent(calculus, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(16, 16, 16)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(malocclusion, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel34))
-                        .addGap(35, 35, 35)
-                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel35)
-                            .addComponent(dother))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addContainerGap())
+                    .addComponent(malocclusion, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel34))
+                .addGap(35, 35, 35)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel35)
+                    .addComponent(dother))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
 
         jPanel14.setBackground(new java.awt.Color(204, 255, 204));
@@ -540,7 +511,7 @@ g2.setTransform(originalTransform);
                     .addComponent(dentalform, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelformLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(dprint, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ddelete, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)))
                 .addGap(0, 44, Short.MAX_VALUE))
         );
@@ -550,7 +521,7 @@ g2.setTransform(originalTransform);
                 .addContainerGap()
                 .addComponent(dentalform, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(dprint)
+                .addComponent(ddelete)
                 .addGap(75, 75, 75))
         );
 
@@ -559,13 +530,13 @@ g2.setTransform(originalTransform);
         jPanel4.setBackground(new java.awt.Color(102, 204, 0));
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        pprint.setBackground(new java.awt.Color(51, 51, 255));
-        pprint.setFont(new java.awt.Font("Microsoft PhagsPa", 1, 18)); // NOI18N
-        pprint.setText("PRINT");
-        pprint.setActionCommand("");
-        pprint.addActionListener(new java.awt.event.ActionListener() {
+        pdelete.setBackground(new java.awt.Color(51, 51, 255));
+        pdelete.setFont(new java.awt.Font("Microsoft PhagsPa", 1, 18)); // NOI18N
+        pdelete.setText("DELETE");
+        pdelete.setActionCommand("");
+        pdelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pprintActionPerformed(evt);
+                pdeleteActionPerformed(evt);
             }
         });
 
@@ -616,14 +587,6 @@ g2.setTransform(originalTransform);
         padvice.setRows(5);
         padvice.setWrapStyleWord(true);
         jScrollPane5.setViewportView(padvice);
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setText("SIGNATURE OF PHYSICIAN");
-
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setText("Abdomen:");
@@ -700,17 +663,10 @@ g2.setTransform(originalTransform);
                                     .addComponent(righteye, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addComponent(pother, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                        .addComponent(jLabel50)
-                        .addGap(5, 5, 5)
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(223, 223, 223))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1))
-                        .addGap(257, 257, 257))))
+                .addComponent(jLabel50)
+                .addGap(5, 5, 5)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(223, 223, 223))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -751,20 +707,14 @@ g2.setTransform(originalTransform);
                                 .addComponent(skin1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(abdomen, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4))
-                        .addGap(24, 24, 24)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel49)
-                            .addComponent(pother, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(20, 20, 20))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18))
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(abdomen, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addGap(24, 24, 24)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel49)
+                    .addComponent(pother, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(68, 68, 68))
         );
 
         jPanel8.setBackground(new java.awt.Color(204, 255, 204));
@@ -916,7 +866,7 @@ g2.setTransform(originalTransform);
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(pprint, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pdelete, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(25, 25, 25))
         );
         jPanel4Layout.setVerticalGroup(
@@ -925,7 +875,7 @@ g2.setTransform(originalTransform);
                 .addContainerGap()
                 .addComponent(physicalform, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(pprint)
+                .addComponent(pdelete)
                 .addContainerGap(73, Short.MAX_VALUE))
         );
 
@@ -1042,17 +992,57 @@ g2.setTransform(originalTransform);
         
     }//GEN-LAST:event_displayrecActionPerformed
 
-    private void dprintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dprintActionPerformed
-       printComponenet(dentalform);
-    }//GEN-LAST:event_dprintActionPerformed
+    private void ddeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ddeleteActionPerformed
+       try{ 
+            String sql = "delete from info where regno=?";
+            pst = conn.prepareStatement(sql);
+            pst.setString(1,getreg.getText());
+            int i = pst.executeUpdate();
+            
+            if (i==1) {
+                PhyDenDelete pd = new PhyDenDelete();
+               JOptionPane.showMessageDialog(null,("Record Deleted"));
+                this.setVisible(false);
+                pd.pack();
+                pd.setLocationRelativeTo(null);
+                pd.setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(null,("Unsuccesful Deletion"));
+            }
+            
+            
+        }catch(Exception e){
+         JOptionPane.showMessageDialog(null,e);
+        }
+    }//GEN-LAST:event_ddeleteActionPerformed
 
     private void getregActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_getregActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_getregActionPerformed
 
-    private void pprintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pprintActionPerformed
-        printComponenet(physicalform);
-    }//GEN-LAST:event_pprintActionPerformed
+    private void pdeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pdeleteActionPerformed
+       try{ 
+            String sql = "delete from info where regno=?";
+            pst = conn.prepareStatement(sql);
+            pst.setString(1,getreg.getText());
+            int i = pst.executeUpdate();
+            
+            if (i==1) {
+                PhyDenDelete pd = new PhyDenDelete();
+               JOptionPane.showMessageDialog(null,("Record Deleted"));
+                this.setVisible(false);
+                pd.pack();
+                pd.setLocationRelativeTo(null);
+                pd.setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(null,("Unsuccesful Deletion"));
+            }
+            
+            
+        }catch(Exception e){
+         JOptionPane.showMessageDialog(null,e);
+        }
+    }//GEN-LAST:event_pdeleteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1071,20 +1061,21 @@ g2.setTransform(originalTransform);
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PhyDenPrint.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PhyDenDelete.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PhyDenPrint.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PhyDenDelete.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PhyDenPrint.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PhyDenDelete.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PhyDenPrint.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PhyDenDelete.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PhyDenPrint().setVisible(true);
+                new PhyDenDelete().setVisible(true);
             }
         });
     }
@@ -1096,20 +1087,18 @@ g2.setTransform(originalTransform);
     private javax.swing.JLabel chest;
     private javax.swing.JTextArea dadvice;
     private javax.swing.JLabel dclass;
+    private javax.swing.JButton ddelete;
     private javax.swing.JLabel ddob;
     private javax.swing.JPanel dentalform;
     private javax.swing.JLabel dgender;
     private javax.swing.JButton displayrec;
     private javax.swing.JLabel dname;
     private javax.swing.JLabel dother;
-    private javax.swing.JButton dprint;
     private javax.swing.JLabel dregno;
     private javax.swing.JLabel dteacher;
     private javax.swing.JTextField getreg;
     private javax.swing.JLabel height;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
@@ -1158,12 +1147,8 @@ g2.setTransform(originalTransform);
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JLabel lefteye;
     private javax.swing.JLabel leftwax;
     private javax.swing.JTabbedPane maintab;
@@ -1171,12 +1156,12 @@ g2.setTransform(originalTransform);
     private javax.swing.JTextArea padvice;
     private javax.swing.JPanel panelform;
     private javax.swing.JLabel pclass;
+    private javax.swing.JButton pdelete;
     private javax.swing.JLabel pdob;
     private javax.swing.JLabel pgender;
     private javax.swing.JPanel physicalform;
     private javax.swing.JLabel pname;
     private javax.swing.JLabel pother;
-    private javax.swing.JButton pprint;
     private javax.swing.JLabel pregno;
     private javax.swing.JLabel pteacher;
     private javax.swing.JLabel righteye;

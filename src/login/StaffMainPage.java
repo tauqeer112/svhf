@@ -14,12 +14,12 @@ package login;
  *
  * @author Tauqeer
  */
-public class MainPage extends javax.swing.JFrame {
+public class StaffMainPage extends javax.swing.JFrame {
 
     /**
      * Creates new form mainpage
      */
-    public MainPage() {
+    public StaffMainPage() {
         initComponents();
         }
 
@@ -52,17 +52,14 @@ public class MainPage extends javax.swing.JFrame {
         jPanel15 = new javax.swing.JPanel();
         listview = new javax.swing.JButton();
         listviewbutton = new javax.swing.JButton();
-        admincreate = new javax.swing.JPanel();
-        newstaff = new javax.swing.JButton();
-        newstaffbutton = new javax.swing.JButton();
-        admindelete = new javax.swing.JPanel();
-        deletestaff = new javax.swing.JButton();
-        deletestaffbutton = new javax.swing.JButton();
+        jPanel18 = new javax.swing.JPanel();
+        editrecord3 = new javax.swing.JButton();
+        viewreg = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         name = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
+        signout = new javax.swing.JButton();
+        priviledge = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("EVERYTHING YOU NEED");
@@ -290,71 +287,40 @@ public class MainPage extends javax.swing.JFrame {
                 .addComponent(listviewbutton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        admincreate.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        admincreate.setPreferredSize(new java.awt.Dimension(250, 200));
+        jPanel18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel18.setPreferredSize(new java.awt.Dimension(250, 200));
 
-        newstaff.setIcon(new javax.swing.ImageIcon(getClass().getResource("/login/images/employee.png"))); // NOI18N
-        newstaff.setPreferredSize(new java.awt.Dimension(250, 200));
-        newstaff.addActionListener(new java.awt.event.ActionListener() {
+        editrecord3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/login/images/printer.png"))); // NOI18N
+        editrecord3.setPreferredSize(new java.awt.Dimension(250, 200));
+        editrecord3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                newstaffActionPerformed(evt);
+                editrecord3ActionPerformed(evt);
             }
         });
 
-        newstaffbutton.setBackground(new java.awt.Color(0, 51, 204));
-        newstaffbutton.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        newstaffbutton.setText("CREATE NEW STAFF");
-        newstaffbutton.setPreferredSize(new java.awt.Dimension(250, 25));
-        newstaffbutton.addActionListener(new java.awt.event.ActionListener() {
+        viewreg.setBackground(new java.awt.Color(0, 51, 204));
+        viewreg.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        viewreg.setText("VIEW/PRINT REGISTRATION RECORD");
+        viewreg.setPreferredSize(new java.awt.Dimension(250, 25));
+        viewreg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                newstaffbuttonActionPerformed(evt);
+                viewregActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout admincreateLayout = new javax.swing.GroupLayout(admincreate);
-        admincreate.setLayout(admincreateLayout);
-        admincreateLayout.setHorizontalGroup(
-            admincreateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(newstaffbutton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(newstaff, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)
+        javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
+        jPanel18.setLayout(jPanel18Layout);
+        jPanel18Layout.setHorizontalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(viewreg, javax.swing.GroupLayout.DEFAULT_SIZE, 301, Short.MAX_VALUE)
+            .addComponent(editrecord3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        admincreateLayout.setVerticalGroup(
-            admincreateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(admincreateLayout.createSequentialGroup()
-                .addComponent(newstaff, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(newstaffbutton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        admindelete.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        admindelete.setPreferredSize(new java.awt.Dimension(250, 200));
-
-        deletestaff.setIcon(new javax.swing.ImageIcon(getClass().getResource("/login/images/user.png"))); // NOI18N
-        deletestaff.setPreferredSize(new java.awt.Dimension(250, 200));
-        deletestaff.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deletestaffActionPerformed(evt);
-            }
-        });
-
-        deletestaffbutton.setBackground(new java.awt.Color(0, 51, 204));
-        deletestaffbutton.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        deletestaffbutton.setText("DELETE STAFF");
-        deletestaffbutton.setPreferredSize(new java.awt.Dimension(250, 25));
-
-        javax.swing.GroupLayout admindeleteLayout = new javax.swing.GroupLayout(admindelete);
-        admindelete.setLayout(admindeleteLayout);
-        admindeleteLayout.setHorizontalGroup(
-            admindeleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(deletestaffbutton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(deletestaff, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        admindeleteLayout.setVerticalGroup(
-            admindeleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(admindeleteLayout.createSequentialGroup()
-                .addComponent(deletestaff, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(deletestaffbutton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        jPanel18Layout.setVerticalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel18Layout.createSequentialGroup()
+                .addComponent(editrecord3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addComponent(viewreg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
@@ -374,56 +340,49 @@ public class MainPage extends javax.swing.JFrame {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, 303, Short.MAX_VALUE)
                     .addComponent(jPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, 303, Short.MAX_VALUE))
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
-                        .addComponent(admindelete, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(147, 147, 147))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(admincreate, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel18, javax.swing.GroupLayout.DEFAULT_SIZE, 303, Short.MAX_VALUE)
+                .addGap(56, 56, 56))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addContainerGap(83, Short.MAX_VALUE)
+                .addContainerGap(48, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel14, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
                     .addComponent(jPanel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
                     .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
-                    .addComponent(admincreate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE))
+                    .addComponent(jPanel18, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE))
                 .addGap(65, 65, 65)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, 299, Short.MAX_VALUE)
-                    .addComponent(jPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, 299, Short.MAX_VALUE)
-                    .addComponent(admindelete, javax.swing.GroupLayout.DEFAULT_SIZE, 299, Short.MAX_VALUE))
+                    .addComponent(jPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, 299, Short.MAX_VALUE))
                 .addGap(91, 91, 91))
         );
 
-        jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 212, 1554, 773));
+        jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 229, 1440, 738));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Symbol", 3, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 204, 255));
         jLabel6.setText("Welcome as");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1081, 13, 147, 44));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 50, 147, 44));
 
         name.setFont(new java.awt.Font("Segoe UI Symbol", 3, 24)); // NOI18N
         name.setForeground(new java.awt.Color(0, 204, 255));
         name.setText("TAUQEER AKHTAR");
-        jPanel1.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(1081, 64, 330, 44));
+        jPanel1.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 90, 330, 44));
 
         jPanel2.setBackground(new java.awt.Color(0, 51, 204));
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
 
-        jButton1.setBackground(new java.awt.Color(0, 51, 204));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton1.setText("SIGN OUT");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        signout.setBackground(new java.awt.Color(0, 51, 204));
+        signout.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        signout.setText("SIGN OUT");
+        signout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                signoutActionPerformed(evt);
             }
         });
 
@@ -431,26 +390,28 @@ public class MainPage extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
+            .addComponent(signout, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(signout))
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1193, 115, 211, -1));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 170, -1, -1));
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI Symbol", 3, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 204, 255));
-        jLabel8.setText("admin");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 20, -1, -1));
+        priviledge.setFont(new java.awt.Font("Segoe UI Symbol", 3, 24)); // NOI18N
+        priviledge.setForeground(new java.awt.Color(0, 204, 255));
+        priviledge.setText("staff");
+        jPanel1.add(priviledge, new org.netbeans.lib.awtextra.AbsoluteConstraints(1290, 50, 140, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1470, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -498,25 +459,8 @@ public class MainPage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_deleterecodbuttonActionPerformed
 
-    private void newstaffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newstaffActionPerformed
-       AddStaff as = new AddStaff();
-          as.pack();
-                as.setLocationRelativeTo(null);
-                as.setVisible(true);
-    }//GEN-LAST:event_newstaffActionPerformed
-
-    private void deletestaffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletestaffActionPerformed
-        DeleteStaff ds = new DeleteStaff();
-          ds.pack();
-                ds.setLocationRelativeTo(null);
-                ds.setVisible(true);
-    }//GEN-LAST:event_deletestaffActionPerformed
-
     private void deleterecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleterecordActionPerformed
-         PhyDenDelete pddel = new PhyDenDelete();
-          pddel.pack();
-                pddel.setLocationRelativeTo(null);
-                pddel.setVisible(true);
+        // TODO add your handling code here:
     }//GEN-LAST:event_deleterecordActionPerformed
 
     private void enterrecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterrecordActionPerformed
@@ -547,20 +491,29 @@ public class MainPage extends javax.swing.JFrame {
                 lv.setVisible(true);
     }//GEN-LAST:event_listviewActionPerformed
 
-    private void newstaffbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newstaffbuttonActionPerformed
-              AddStaff as = new AddStaff();
-          as.pack();
-                as.setLocationRelativeTo(null);
-                as.setVisible(true);
-    }//GEN-LAST:event_newstaffbuttonActionPerformed
+    private void editrecord3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editrecord3ActionPerformed
+     MyKidView mkv = new MyKidView();
+       mkv.pack();
+                mkv.setLocationRelativeTo(null);
+                mkv.setVisible(true);
+    }//GEN-LAST:event_editrecord3ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Login ln = new Login();
+    private void viewregActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewregActionPerformed
+      MyKidView mkv = new MyKidView();
+       mkv.pack();
+                mkv.setLocationRelativeTo(null);
+                mkv.setVisible(true);
+
+    }//GEN-LAST:event_viewregActionPerformed
+
+    private void signoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signoutActionPerformed
+      Login ln = new Login();
        ln.pack();
                 ln.setLocationRelativeTo(null);
                 ln.setVisible(true);
                 this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+      
+    }//GEN-LAST:event_signoutActionPerformed
 
     /**
      * @param args the command line arguments
@@ -579,39 +532,40 @@ public class MainPage extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StaffMainPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StaffMainPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StaffMainPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StaffMainPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MainPage().setVisible(true);
+                new StaffMainPage().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JPanel admincreate;
-    public javax.swing.JPanel admindelete;
     private javax.swing.JButton deleterecodbutton;
     private javax.swing.JButton deleterecord;
-    private javax.swing.JButton deletestaff;
-    private javax.swing.JButton deletestaffbutton;
     private javax.swing.JButton editbutton;
+    private javax.swing.JButton editbutton1;
+    private javax.swing.JButton editbutton2;
     private javax.swing.JButton editrecord;
+    private javax.swing.JButton editrecord1;
+    private javax.swing.JButton editrecord2;
+    private javax.swing.JButton editrecord3;
     private javax.swing.JButton enterrecord;
     private javax.swing.JButton enterrecordbutton;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -619,6 +573,9 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JButton listview;
@@ -626,9 +583,10 @@ public class MainPage extends javax.swing.JFrame {
     public javax.swing.JLabel name;
     private javax.swing.JButton newreg;
     private javax.swing.JButton newregbutton;
-    private javax.swing.JButton newstaff;
-    private javax.swing.JButton newstaffbutton;
+    private javax.swing.JLabel priviledge;
+    private javax.swing.JButton signout;
     private javax.swing.JButton viewprint;
     private javax.swing.JButton viewprintbutton;
+    private javax.swing.JButton viewreg;
     // End of variables declaration//GEN-END:variables
 }

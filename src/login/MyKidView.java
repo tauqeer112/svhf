@@ -5,6 +5,14 @@
  */
 package login;
 
+import java.awt.Component;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.geom.AffineTransform;
+import java.awt.print.PageFormat;
+import java.awt.print.Printable;
+import java.awt.print.PrinterException;
+import java.awt.print.PrinterJob;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -14,12 +22,49 @@ import javax.swing.JOptionPane;
  *
  * @author Tauqeer
  */
-public class MyKid extends javax.swing.JFrame {
+public class MyKidView extends javax.swing.JFrame {
 
    Connection conn = null;
     PreparedStatement pst = null;
-    ResultSet rs = null;    
-    public MyKid() {
+    ResultSet rs = null;   
+    public void printComponenet(Component component){
+  PrinterJob pj = PrinterJob.getPrinterJob();
+  pj.setJobName(" Print Component ");
+
+  pj.setPrintable (new Printable() {    
+    @Override
+    public int print(Graphics pg, PageFormat pf, int pageNum){
+      if (pageNum > 0){
+      return Printable.NO_SUCH_PAGE;
+      }
+
+      Graphics2D g2 = (Graphics2D) pg;
+      AffineTransform originalTransform = g2.getTransform();
+
+double scaleX = pf.getImageableWidth() / component.getWidth();
+double scaleY = pf.getImageableHeight() / component.getHeight();
+// Maintain aspect ratio
+double scale = Math.min(scaleX, scaleY);
+g2.translate(pf.getImageableX(), pf.getImageableY());
+g2.scale(scale, scale);
+component.printAll(g2);
+
+g2.setTransform(originalTransform);
+//      g2.translate(pf.getImageableX(), pf.getImageableY());
+//      component.paint(g2);
+      return Printable.PAGE_EXISTS;
+    }
+  });
+  if (pj.printDialog() == false)
+  return;
+
+  try {
+        pj.print();
+  } catch (PrinterException ex) {
+        // handle exception
+  }
+}
+    public MyKidView() {
         initComponents();
          conn = MysqlConnect.ConnectDB();
     }
@@ -33,8 +78,15 @@ public class MyKid extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        gender = new javax.swing.ButtonGroup();
+        maintab = new javax.swing.JTabbedPane();
+        jPanel15 = new javax.swing.JPanel();
+        jPanel16 = new javax.swing.JPanel();
+        jPanel17 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        getreg = new javax.swing.JTextField();
+        displayrec = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
+        form = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -48,11 +100,8 @@ public class MyKid extends javax.swing.JFrame {
         name = new javax.swing.JTextField();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
-        sclass = new javax.swing.JComboBox<>();
         jLabel27 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
-        male = new javax.swing.JRadioButton();
-        female = new javax.swing.JRadioButton();
         jLabel30 = new javax.swing.JLabel();
         father = new javax.swing.JTextField();
         mother = new javax.swing.JTextField();
@@ -62,8 +111,10 @@ public class MyKid extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         section = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        bloodgroup = new javax.swing.JComboBox<>();
         dob = new javax.swing.JTextField();
+        sclass = new javax.swing.JTextField();
+        blood = new javax.swing.JTextField();
+        gender = new javax.swing.JTextField();
         jPanel8 = new javax.swing.JPanel();
         jLabel34 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -94,7 +145,7 @@ public class MyKid extends javax.swing.JFrame {
         hepe = new javax.swing.JCheckBox();
         jPanel11 = new javax.swing.JPanel();
         jLabel37 = new javax.swing.JLabel();
-        allergic = new javax.swing.JTextField();
+        allergy = new javax.swing.JTextField();
         jPanel12 = new javax.swing.JPanel();
         jLabel38 = new javax.swing.JLabel();
         chronic = new javax.swing.JTextField();
@@ -102,11 +153,104 @@ public class MyKid extends javax.swing.JFrame {
         jLabel39 = new javax.swing.JLabel();
         med = new javax.swing.JTextField();
         jPanel14 = new javax.swing.JPanel();
-        submitreg = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        jPanel16.setBackground(new java.awt.Color(51, 153, 0));
+
+        jPanel17.setBackground(new java.awt.Color(204, 255, 204));
+
+        jLabel11.setBackground(new java.awt.Color(204, 255, 204));
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel11.setText("ENTER STUDENT'S REGISTRATION NUMBER TO VIEW RECORD");
+
+        javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
+        jPanel17.setLayout(jPanel17Layout);
+        jPanel17Layout.setHorizontalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
+                .addContainerGap(74, Short.MAX_VALUE)
+                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 880, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32))
+        );
+        jPanel17Layout.setVerticalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel17Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        getreg.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        getreg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                getregActionPerformed(evt);
+            }
+        });
+
+        displayrec.setBackground(new java.awt.Color(51, 51, 255));
+        displayrec.setFont(new java.awt.Font("Microsoft PhagsPa", 1, 24)); // NOI18N
+        displayrec.setText("DISPLAY RECORD");
+        displayrec.setActionCommand("");
+        displayrec.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                displayrecActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
+        jPanel16.setLayout(jPanel16Layout);
+        jPanel16Layout.setHorizontalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel16Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel16Layout.createSequentialGroup()
+                        .addGap(370, 370, 370)
+                        .addComponent(displayrec, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addGap(285, 285, 285)
+                .addComponent(getreg, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel16Layout.setVerticalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(86, 86, 86)
+                .addComponent(getreg, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(84, 84, 84)
+                .addComponent(displayrec, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(626, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
+        jPanel15.setLayout(jPanel15Layout);
+        jPanel15Layout.setHorizontalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1010, Short.MAX_VALUE)
+            .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jPanel16, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel15Layout.setVerticalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1008, Short.MAX_VALUE)
+            .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jPanel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        maintab.addTab("MAIN", jPanel15);
+
         jPanel1.setBackground(new java.awt.Color(0, 153, 0));
+
+        form.setBackground(new java.awt.Color(51, 153, 0));
+        form.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 4, true));
 
         jPanel2.setBackground(new java.awt.Color(51, 153, 0));
         jPanel2.setForeground(new java.awt.Color(204, 0, 0));
@@ -196,40 +340,43 @@ public class MyKid extends javax.swing.JFrame {
 
         jLabel23.setText("DOB:");
 
+        regno.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+
         jLabel24.setText("Name of Student:");
 
-        jLabel26.setText("Father's Name:");
+        name.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
-        sclass.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", " " }));
-        sclass.setSelectedIndex(-1);
+        jLabel26.setText("Father's Name:");
 
         jLabel27.setText("Class:");
 
         jLabel28.setText("Gender:");
 
-        male.setBackground(new java.awt.Color(204, 255, 204));
-        male.setText("Male");
-        male.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                maleActionPerformed(evt);
-            }
-        });
-
-        female.setBackground(new java.awt.Color(204, 255, 204));
-        female.setText("Female");
-
         jLabel30.setText("Mother's Name:");
+
+        father.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+
+        mother.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
         jLabel31.setText("SV Registration No.");
 
         jLabel29.setText("Section:");
 
+        year.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+
         jLabel3.setText("Academic Year:");
+
+        section.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
         jLabel4.setText("Blood Group:");
 
-        bloodgroup.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-" }));
-        bloodgroup.setSelectedIndex(-1);
+        dob.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+
+        sclass.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+
+        blood.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+
+        gender.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -240,42 +387,39 @@ public class MyKid extends javax.swing.JFrame {
                     .addComponent(jLabel24)
                     .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel26)
-                    .addComponent(jLabel27)
                     .addComponent(jLabel28)
                     .addComponent(jLabel31)
-                    .addComponent(jLabel4))
-                .addGap(44, 44, 44)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel27))
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(64, 64, 64)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(father, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addComponent(male)
-                                .addGap(26, 26, 26)
-                                .addComponent(female))
                             .addComponent(regno, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addComponent(sclass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(76, 76, 76)
-                                .addComponent(jLabel29)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(section, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel30)
-                                .addComponent(jLabel23))
-                            .addComponent(jLabel3))
-                        .addGap(26, 26, 26)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(dob, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(mother, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(year, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(19, 19, 19))
+                            .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(bloodgroup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(gender, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
+                            .addComponent(blood, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
+                            .addComponent(sclass))
+                        .addGap(72, 72, 72)
+                        .addComponent(jLabel29)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(section, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel30)
+                        .addComponent(jLabel23))
+                    .addComponent(jLabel3))
+                .addGap(26, 26, 26)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(dob, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mother, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(year, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -300,23 +444,22 @@ public class MyKid extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(sclass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel29)
                         .addComponent(year, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel3)
                         .addComponent(section, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel27))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel28)
                     .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(male)
-                        .addComponent(female)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel27)
+                        .addComponent(sclass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel28)
+                    .addComponent(gender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(bloodgroup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(36, Short.MAX_VALUE))
+                    .addComponent(blood, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
 
         jPanel8.setBackground(new java.awt.Color(204, 255, 204));
@@ -329,10 +472,12 @@ public class MyKid extends javax.swing.JFrame {
         jPanel6.setBackground(new java.awt.Color(204, 255, 204));
 
         residential.setColumns(20);
+        residential.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         residential.setRows(5);
         jScrollPane1.setViewportView(residential);
 
         permanent.setColumns(20);
+        permanent.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         permanent.setRows(5);
         jScrollPane2.setViewportView(permanent);
 
@@ -352,6 +497,10 @@ public class MyKid extends javax.swing.JFrame {
         );
 
         jLabel5.setText("Contact Number:");
+
+        contact.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+
+        email.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
         jLabel6.setText("Email:");
 
@@ -428,6 +577,8 @@ public class MyKid extends javax.swing.JFrame {
         });
 
         jLabel10.setText("Any Other:");
+
+        anyother.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -532,9 +683,10 @@ public class MyKid extends javax.swing.JFrame {
         jPanel11.setBackground(new java.awt.Color(204, 255, 204));
         jPanel11.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2), "Allergic with", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 18))); // NOI18N
 
-        allergic.addActionListener(new java.awt.event.ActionListener() {
+        allergy.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        allergy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                allergicActionPerformed(evt);
+                allergyActionPerformed(evt);
             }
         });
 
@@ -545,13 +697,13 @@ public class MyKid extends javax.swing.JFrame {
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(allergic, javax.swing.GroupLayout.PREFERRED_SIZE, 652, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(allergy, javax.swing.GroupLayout.PREFERRED_SIZE, 652, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
-                .addComponent(allergic, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(allergy, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel37))
         );
@@ -559,6 +711,7 @@ public class MyKid extends javax.swing.JFrame {
         jPanel12.setBackground(new java.awt.Color(204, 255, 204));
         jPanel12.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2), "Any Chronic illness", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 18))); // NOI18N
 
+        chronic.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         chronic.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chronicActionPerformed(evt);
@@ -586,6 +739,7 @@ public class MyKid extends javax.swing.JFrame {
         jPanel13.setBackground(new java.awt.Color(204, 255, 204));
         jPanel13.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2), "Medicines commonly used", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 18))); // NOI18N
 
+        med.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         med.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 medActionPerformed(evt);
@@ -610,15 +764,51 @@ public class MyKid extends javax.swing.JFrame {
                 .addComponent(jLabel39))
         );
 
-        jPanel14.setBackground(new java.awt.Color(102, 102, 255));
+        javax.swing.GroupLayout formLayout = new javax.swing.GroupLayout(form);
+        form.setLayout(formLayout);
+        formLayout.setHorizontalGroup(
+            formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(formLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel12, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 986, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+        formLayout.setVerticalGroup(
+            formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(formLayout.createSequentialGroup()
+                .addGap(0, 22, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
-        submitreg.setBackground(new java.awt.Color(51, 51, 255));
-        submitreg.setFont(new java.awt.Font("Microsoft PhagsPa", 1, 18)); // NOI18N
-        submitreg.setText("SUBMIT");
-        submitreg.setActionCommand("");
-        submitreg.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setBackground(new java.awt.Color(0, 51, 255));
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton1.setText("PRINT");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submitregActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -626,82 +816,51 @@ public class MyKid extends javax.swing.JFrame {
         jPanel14.setLayout(jPanel14Layout);
         jPanel14Layout.setHorizontalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
-                .addComponent(submitreg, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE)
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(submitreg, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
+                .addComponent(jButton1)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 969, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 8, Short.MAX_VALUE))
-                    .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addComponent(form, javax.swing.GroupLayout.PREFERRED_SIZE, 1010, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(406, 406, 406)
+                .addGap(387, 387, 387)
                 .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(form, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(37, Short.MAX_VALUE))
         );
+
+        maintab.addTab("REGISTRATION RECORD", jPanel1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(maintab, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0))
+            .addComponent(maintab, javax.swing.GroupLayout.PREFERRED_SIZE, 1038, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void maleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_maleActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_maleActionPerformed
 
     private void bpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bpActionPerformed
         // TODO add your handling code here:
@@ -723,9 +882,9 @@ public class MyKid extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_hepbActionPerformed
 
-    private void allergicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_allergicActionPerformed
+    private void allergyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_allergyActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_allergicActionPerformed
+    }//GEN-LAST:event_allergyActionPerformed
 
     private void chronicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chronicActionPerformed
         // TODO add your handling code here:
@@ -735,107 +894,108 @@ public class MyKid extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_medActionPerformed
 
-    private void submitregActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitregActionPerformed
-       try{ 
-            String gen = null;
-            String diabe = null;
-            String spolio = null;
-            String smeasles = null;
-            String shepatitisa = null;
-            String shepatitisb = null;
-            String shepatitise= null;
-            
-            
-            String sql = "INSERT INTO registration(reg, father, mother, class, section, year,gender, bloodgr, resaddr,permadd, diab, hother, vpolio, vmeasles, vhepatitisb, vhepatitisa, vhepatitise, allergic, chronic, med, phn, email,dob) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?,?,?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?,?)";
+    private void getregActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_getregActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_getregActionPerformed
+
+    private void displayrecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayrecActionPerformed
+
+        String reg = getreg.getText();
+        try {
+            String sql = "select * from registration where reg=?";
             pst = conn.prepareStatement(sql);
-            pst.setString(1,regno.getText());
-            pst.setString(2,father.getText());
-             pst.setString(3,mother.getText());
-             int scl = sclass.getSelectedIndex();
-            pst.setInt(4,scl+1);
-             pst.setString(5,section.getText());
-            pst.setString(6,year.getText());
-            
-             if(male.isSelected())
-             {
-               gen = "m";  
-                 
-             }else if(female.isSelected()){
-               gen = "f";
-             }else{
-                  JOptionPane.showMessageDialog(null,("Select gender"));
-             }
-             pst.setString(7,gen);
-             String blood = (String)bloodgroup.getSelectedItem();
-             
-            pst.setString(8,blood);
-             pst.setString(9,residential.getText());
-            pst.setString(10,permanent.getText());
-            if(diab.isSelected()){
-            diabe = "yes";
-            }else{
-            diabe = "no";
-            }
-            if(polio.isSelected()){
-            spolio = "yes";
-            }else{
-            spolio = "no";
-            }
-            if(measles.isSelected()){
-            smeasles = "yes";
-            }else{
-            smeasles = "no";
-            }
-            if(hepa.isSelected()){
-            shepatitisa = "yes";
-            }else{
-            shepatitisa = "no";
-            }
-            if(hepb.isSelected()){
-            shepatitisb = "yes";
-            }else{
-            shepatitisb = "no";
-            }
-            if(hepe.isSelected()){
-            shepatitise = "yes";
-            }else{
-            shepatitise = "no";
-            }
-            
-            
-             pst.setString(11,diabe);
-            pst.setString(12,anyother.getText());
-             pst.setString(13,spolio);
-            pst.setString(14,smeasles);
-             pst.setString(15,shepatitisb);
-            pst.setString(16,shepatitisa);
-             pst.setString(17,shepatitise);
-            pst.setString(18,allergic.getText());
-             pst.setString(19,chronic.getText());
-            pst.setString(20,med.getText());
-             pst.setString(21,contact.getText());
-            pst.setString(22,email.getText());
-            pst.setString(23,dob.getText());
-            
-             int i = pst.executeUpdate();
-            
-            if (i==1) {
-                JOptionPane.showMessageDialog(null,("Record Saved you can retrieve anytime"));
-                StaffMainPage mp = new StaffMainPage();
+            pst.setString(1,reg);
+            rs = pst.executeQuery();
+            if(rs.next()){
+                maintab.setSelectedIndex(1);
+                regno.setText(reg);
+                String sfather = rs.getString("father");
+                father.setText(sfather);
+               
+                String smother = rs.getString("mother");
+                mother.setText(smother);
+                String seclass = rs.getString("class");
+                sclass.setText(seclass);
+
+                String ssection = rs.getString("section");
+                section.setText(ssection);
                 
-                mp.pack();
-                mp.setLocationRelativeTo(null);
-                mp.setVisible(true);
-                this.dispose();
-            } else {
-                JOptionPane.showMessageDialog(null,("Failed to sace data"));
+                String syear = rs.getString("year");
+                year.setText(syear);
+                
+                String sgender = rs.getString("gender");
+                gender.setText(sgender);
+                
+                String bloodgr = rs.getString("bloodgr");
+                blood.setText(bloodgr);
+                
+                String resaddr = rs.getString("resaddr");
+                residential.setText(resaddr);
+                String permadd = rs.getString("permadd");
+                permanent.setText(permadd);
+                String diabe = rs.getString("diab");
+                if("yes".equals(diabe)){
+                diab.setSelected(true);
+                }
+                 String vpolio = rs.getString("vpolio");
+                if("yes".equals(vpolio)){
+                polio.setSelected(true);
+                }
+                 String vmeasles = rs.getString("vmeasles");
+                if("yes".equals(vmeasles)){
+                measles.setSelected(true);
+                }
+                 String vhepatitisb = rs.getString("vhepatitisb");
+                if("yes".equals(vhepatitisb)){
+                hepb.setSelected(true);
+                }
+                 String vhepatitise = rs.getString("vhepatitise");
+                if("yes".equals(vhepatitise)){
+                hepe.setSelected(true);
+                }
+                 String asthama = rs.getString("asthama");
+                if("yes".equals(asthama)){
+                asth.setSelected(true);
+                }
+                 String hbp = rs.getString("bp");
+                if("yes".equals(hbp)){
+                bp.setSelected(true);
+                }
+                String vhepatitisa = rs.getString("vhepatitisa");
+                hepa.setText(vhepatitisa);
+                String allergic = rs.getString("allergic");
+                allergy.setText(allergic);
+                String schronic = rs.getString("chronic");
+                chronic.setText(schronic);
+                String smed = rs.getString("med");
+                med.setText(smed);
+                String phn = rs.getString("phn");
+                contact.setText(phn);
+                String hother = rs.getString("hother");
+                anyother.setText(hother);
+                String date = rs.getString("dob");
+                dob.setText(date);
+                 String semail = rs.getString("email");
+                email.setText(semail);
+                 String sname = rs.getString("name");
+                name.setText(sname);
+                
+               
+
+            }else{
+                JOptionPane.showMessageDialog(null,"Wrong Registration number try again");
+
             }
-            
-            
-        }catch(Exception e){
-        JOptionPane.showMessageDialog(null,e);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,e);
         }
-    }//GEN-LAST:event_submitregActionPerformed
+
+    }//GEN-LAST:event_displayrecActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+         printComponenet(form);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -854,43 +1014,48 @@ public class MyKid extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MyKid.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MyKidView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MyKid.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MyKidView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MyKid.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MyKidView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MyKid.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MyKidView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MyKid().setVisible(true);
+                new MyKidView().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField allergic;
+    private javax.swing.JTextField allergy;
     private javax.swing.JTextField anyother;
     private javax.swing.JCheckBox asth;
-    private javax.swing.JComboBox<String> bloodgroup;
+    private javax.swing.JTextField blood;
     private javax.swing.JCheckBox bp;
     private javax.swing.JTextField chronic;
     private javax.swing.JTextField contact;
     private javax.swing.JCheckBox diab;
+    private javax.swing.JButton displayrec;
     private javax.swing.JTextField dob;
     private javax.swing.JTextField email;
     private javax.swing.JTextField father;
-    private javax.swing.JRadioButton female;
-    private javax.swing.ButtonGroup gender;
+    private javax.swing.JPanel form;
+    private javax.swing.JTextField gender;
+    private javax.swing.JTextField getreg;
     private javax.swing.JCheckBox hepa;
     private javax.swing.JCheckBox hepb;
     private javax.swing.JCheckBox hepe;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
@@ -920,6 +1085,9 @@ public class MyKid extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -930,7 +1098,7 @@ public class MyKid extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JRadioButton male;
+    private javax.swing.JTabbedPane maintab;
     private javax.swing.JCheckBox measles;
     private javax.swing.JTextField med;
     private javax.swing.JTextField mother;
@@ -939,9 +1107,8 @@ public class MyKid extends javax.swing.JFrame {
     private javax.swing.JCheckBox polio;
     private javax.swing.JTextField regno;
     private javax.swing.JTextArea residential;
-    private javax.swing.JComboBox<String> sclass;
+    private javax.swing.JTextField sclass;
     private javax.swing.JTextField section;
-    private javax.swing.JButton submitreg;
     private javax.swing.JTextField year;
     // End of variables declaration//GEN-END:variables
 }
