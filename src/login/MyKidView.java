@@ -6,8 +6,10 @@
 package login;
 
 import java.awt.Component;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Toolkit;
 import java.awt.geom.AffineTransform;
 import java.awt.print.PageFormat;
 import java.awt.print.Printable;
@@ -66,6 +68,10 @@ g2.setTransform(originalTransform);
 }
     public MyKidView() {
         initComponents();
+          Toolkit toolkit = Toolkit.getDefaultToolkit();
+Dimension d = toolkit.getScreenSize();
+
+this.setSize(d.width,d.height);
          conn = MysqlConnect.ConnectDB();
     }
 

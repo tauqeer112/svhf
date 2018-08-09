@@ -278,7 +278,7 @@ public class Login extends javax.swing.JFrame {
             rs = pst.executeQuery();
             
             if (rs.next()) {
-                
+                this.setVisible(false);
                 if("STAFF".equals(priviledge))
                 {
                 StaffMainPage mp = new StaffMainPage();

@@ -56,10 +56,10 @@ public class StaffMainPage extends javax.swing.JFrame {
         editrecord3 = new javax.swing.JButton();
         viewreg = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
+        priviledge = new javax.swing.JLabel();
         name = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         signout = new javax.swing.JButton();
-        priviledge = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("EVERYTHING YOU NEED");
@@ -68,7 +68,6 @@ public class StaffMainPage extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1230, 811));
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 0));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel7.setBackground(new java.awt.Color(204, 255, 204));
         jPanel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -235,6 +234,11 @@ public class StaffMainPage extends javax.swing.JFrame {
         editbutton.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         editbutton.setText("EDIT RECORD");
         editbutton.setPreferredSize(new java.awt.Dimension(250, 25));
+        editbutton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editbuttonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
@@ -347,31 +351,36 @@ public class StaffMainPage extends javax.swing.JFrame {
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addContainerGap(48, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel14, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
                     .addComponent(jPanel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
                     .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
                     .addComponent(jPanel18, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE))
-                .addGap(65, 65, 65)
+                .addGap(30, 30, 30)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, 299, Short.MAX_VALUE)
                     .addComponent(jPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, 299, Short.MAX_VALUE))
-                .addGap(91, 91, 91))
+                .addGap(20, 20, 20))
         );
 
-        jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 229, 1440, 738));
+        jPanel1.add(jPanel7);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Symbol", 3, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 204, 255));
         jLabel6.setText("Welcome as");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 50, 147, 44));
+        jPanel1.add(jLabel6);
+
+        priviledge.setFont(new java.awt.Font("Segoe UI Symbol", 3, 24)); // NOI18N
+        priviledge.setForeground(new java.awt.Color(0, 204, 255));
+        priviledge.setText("staff");
+        jPanel1.add(priviledge);
 
         name.setFont(new java.awt.Font("Segoe UI Symbol", 3, 24)); // NOI18N
         name.setForeground(new java.awt.Color(0, 204, 255));
         name.setText("TAUQEER AKHTAR");
-        jPanel1.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 90, 330, 44));
+        jPanel1.add(name);
 
         jPanel2.setBackground(new java.awt.Color(0, 51, 204));
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -390,7 +399,7 @@ public class StaffMainPage extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(signout, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
+            .addComponent(signout, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -399,24 +408,17 @@ public class StaffMainPage extends javax.swing.JFrame {
                 .addComponent(signout))
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 170, -1, -1));
-
-        priviledge.setFont(new java.awt.Font("Segoe UI Symbol", 3, 24)); // NOI18N
-        priviledge.setForeground(new java.awt.Color(0, 204, 255));
-        priviledge.setText("staff");
-        jPanel1.add(priviledge, new org.netbeans.lib.awtextra.AbsoluteConstraints(1290, 50, 140, 40));
+        jPanel1.add(jPanel2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1470, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1420, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 671, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -431,7 +433,10 @@ public class StaffMainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_newregbuttonActionPerformed
 
     private void editrecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editrecordActionPerformed
-        // TODO add your handling code here:
+         StudentInfoEdit sie = new StudentInfoEdit();
+        sie.pack();
+                sie.setLocationRelativeTo(null);
+                sie.setVisible(true);
     }//GEN-LAST:event_editrecordActionPerformed
 
     private void viewprintbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewprintbuttonActionPerformed
@@ -456,11 +461,17 @@ public class StaffMainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_enterrecordbuttonActionPerformed
 
     private void deleterecodbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleterecodbuttonActionPerformed
-        // TODO add your handling code here:
+        PhyDenDelete pddel = new PhyDenDelete();
+          pddel.pack();
+                pddel.setLocationRelativeTo(null);
+                pddel.setVisible(true);
     }//GEN-LAST:event_deleterecodbuttonActionPerformed
 
     private void deleterecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleterecordActionPerformed
-        // TODO add your handling code here:
+        PhyDenDelete pddel = new PhyDenDelete();
+          pddel.pack();
+                pddel.setLocationRelativeTo(null);
+                pddel.setVisible(true);
     }//GEN-LAST:event_deleterecordActionPerformed
 
     private void enterrecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterrecordActionPerformed
@@ -515,6 +526,13 @@ public class StaffMainPage extends javax.swing.JFrame {
       
     }//GEN-LAST:event_signoutActionPerformed
 
+    private void editbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editbuttonActionPerformed
+        StudentInfoEdit sie = new StudentInfoEdit();
+        sie.pack();
+                sie.setLocationRelativeTo(null);
+                sie.setVisible(true);
+    }//GEN-LAST:event_editbuttonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -557,11 +575,7 @@ public class StaffMainPage extends javax.swing.JFrame {
     private javax.swing.JButton deleterecodbutton;
     private javax.swing.JButton deleterecord;
     private javax.swing.JButton editbutton;
-    private javax.swing.JButton editbutton1;
-    private javax.swing.JButton editbutton2;
     private javax.swing.JButton editrecord;
-    private javax.swing.JButton editrecord1;
-    private javax.swing.JButton editrecord2;
     private javax.swing.JButton editrecord3;
     private javax.swing.JButton enterrecord;
     private javax.swing.JButton enterrecordbutton;
@@ -573,8 +587,6 @@ public class StaffMainPage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
-    private javax.swing.JPanel jPanel16;
-    private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel7;

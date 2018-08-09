@@ -14,7 +14,7 @@ public class MysqlConnect {
     
     try{
     Class.forName("com.mysql.jdbc.Driver"); //loading the driver
-    Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/svhf","root","tauqeer");
+    Connection conn = DriverManager.getConnection("jdbc:mysql://den1.mysql4.gear.host/svhf","svhf","tauqeer@112");
     
 //    JOptionPane.showMessageDialog(null,"Connected Successfully");
     return conn;

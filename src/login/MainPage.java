@@ -5,6 +5,8 @@
  */
 package login;
 
+import javax.swing.JFrame;
+
 
 
 
@@ -15,12 +17,14 @@ package login;
  * @author Tauqeer
  */
 public class MainPage extends javax.swing.JFrame {
+    
 
     /**
      * Creates new form mainpage
      */
     public MainPage() {
         initComponents();
+        
         }
 
     /**
@@ -59,10 +63,10 @@ public class MainPage extends javax.swing.JFrame {
         deletestaff = new javax.swing.JButton();
         deletestaffbutton = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         name = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("EVERYTHING YOU NEED");
@@ -71,7 +75,6 @@ public class MainPage extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1230, 811));
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 0));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel7.setBackground(new java.awt.Color(204, 255, 204));
         jPanel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -100,12 +103,12 @@ public class MainPage extends javax.swing.JFrame {
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel10Layout.createSequentialGroup()
                         .addComponent(viewprint, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(4, 4, 4))
                     .addComponent(viewprintbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 0, 0))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -146,9 +149,9 @@ public class MainPage extends javax.swing.JFrame {
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
-                .addComponent(newreg, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(newregbutton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(newreg, javax.swing.GroupLayout.PREFERRED_SIZE, 199, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(newregbutton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -238,6 +241,11 @@ public class MainPage extends javax.swing.JFrame {
         editbutton.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         editbutton.setText("EDIT RECORD");
         editbutton.setPreferredSize(new java.awt.Dimension(250, 25));
+        editbutton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editbuttonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
@@ -341,13 +349,18 @@ public class MainPage extends javax.swing.JFrame {
         deletestaffbutton.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         deletestaffbutton.setText("DELETE STAFF");
         deletestaffbutton.setPreferredSize(new java.awt.Dimension(250, 25));
+        deletestaffbutton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deletestaffbuttonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout admindeleteLayout = new javax.swing.GroupLayout(admindelete);
         admindelete.setLayout(admindeleteLayout);
         admindeleteLayout.setHorizontalGroup(
             admindeleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(deletestaffbutton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(deletestaff, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(deletestaff, javax.swing.GroupLayout.DEFAULT_SIZE, 314, Short.MAX_VALUE)
         );
         admindeleteLayout.setVerticalGroup(
             admindeleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -376,9 +389,9 @@ public class MainPage extends javax.swing.JFrame {
                     .addComponent(jPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, 303, Short.MAX_VALUE))
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(admindelete, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(147, 147, 147))
+                        .addGap(10, 10, 10))
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(admincreate, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -387,32 +400,37 @@ public class MainPage extends javax.swing.JFrame {
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addContainerGap(83, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel14, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
                     .addComponent(jPanel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
                     .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
                     .addComponent(admincreate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE))
-                .addGap(65, 65, 65)
+                .addGap(30, 30, 30)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, 299, Short.MAX_VALUE)
                     .addComponent(jPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, 299, Short.MAX_VALUE)
                     .addComponent(admindelete, javax.swing.GroupLayout.DEFAULT_SIZE, 299, Short.MAX_VALUE))
-                .addGap(91, 91, 91))
+                .addGap(20, 20, 20))
         );
 
-        jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 212, 1554, 773));
+        jPanel1.add(jPanel7);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Symbol", 3, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 204, 255));
         jLabel6.setText("Welcome as");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1081, 13, 147, 44));
+        jPanel1.add(jLabel6);
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI Symbol", 3, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 204, 255));
+        jLabel8.setText("admin");
+        jPanel1.add(jLabel8);
 
         name.setFont(new java.awt.Font("Segoe UI Symbol", 3, 24)); // NOI18N
         name.setForeground(new java.awt.Color(0, 204, 255));
         name.setText("TAUQEER AKHTAR");
-        jPanel1.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(1081, 64, 330, 44));
+        jPanel1.add(name);
 
         jPanel2.setBackground(new java.awt.Color(0, 51, 204));
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -431,31 +449,29 @@ public class MainPage extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
+            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1193, 115, 211, -1));
-
-        jLabel8.setFont(new java.awt.Font("Segoe UI Symbol", 3, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 204, 255));
-        jLabel8.setText("admin");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 20, -1, -1));
+        jPanel1.add(jPanel2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1475, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 670, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0))
         );
 
         pack();
@@ -463,33 +479,36 @@ public class MainPage extends javax.swing.JFrame {
 
     private void newregbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newregbuttonActionPerformed
            MyKid mk = new MyKid();
-          mk.pack();
+//          mk.pack();
                 mk.setLocationRelativeTo(null);
                 mk.setVisible(true);
                                     
     }//GEN-LAST:event_newregbuttonActionPerformed
 
     private void editrecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editrecordActionPerformed
-        // TODO add your handling code here:
+       StudentInfoEdit sie = new StudentInfoEdit();
+//        sie.pack();
+                sie.setLocationRelativeTo(null);
+                sie.setVisible(true);
     }//GEN-LAST:event_editrecordActionPerformed
 
     private void viewprintbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewprintbuttonActionPerformed
      PhyDenPrint pd = new PhyDenPrint();
-        pd.pack();
+//        pd.pack();
                 pd.setLocationRelativeTo(null);
                 pd.setVisible(true);
     }//GEN-LAST:event_viewprintbuttonActionPerformed
 
     private void listviewbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listviewbuttonActionPerformed
         ListView lv = new ListView();
-        lv.pack();
+//        lv.pack();
                 lv.setLocationRelativeTo(null);
                 lv.setVisible(true);
     }//GEN-LAST:event_listviewbuttonActionPerformed
 
     private void enterrecordbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterrecordbuttonActionPerformed
         StudentInfo si = new StudentInfo();
-          si.pack();
+//          si.pack();
                 si.setLocationRelativeTo(null);
                 si.setVisible(true);
     }//GEN-LAST:event_enterrecordbuttonActionPerformed
@@ -500,67 +519,85 @@ public class MainPage extends javax.swing.JFrame {
 
     private void newstaffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newstaffActionPerformed
        AddStaff as = new AddStaff();
-          as.pack();
+//          as.pack();
                 as.setLocationRelativeTo(null);
                 as.setVisible(true);
+                this.dispose();
     }//GEN-LAST:event_newstaffActionPerformed
 
     private void deletestaffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletestaffActionPerformed
         DeleteStaff ds = new DeleteStaff();
-          ds.pack();
+//          ds.pack();
                 ds.setLocationRelativeTo(null);
                 ds.setVisible(true);
+                this.setVisible(false);
     }//GEN-LAST:event_deletestaffActionPerformed
 
     private void deleterecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleterecordActionPerformed
          PhyDenDelete pddel = new PhyDenDelete();
-          pddel.pack();
+//          pddel.pack();
                 pddel.setLocationRelativeTo(null);
                 pddel.setVisible(true);
     }//GEN-LAST:event_deleterecordActionPerformed
 
     private void enterrecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterrecordActionPerformed
         StudentInfo si = new StudentInfo();
-          si.pack();
+//          si.pack();
                 si.setLocationRelativeTo(null);
                 si.setVisible(true);
     }//GEN-LAST:event_enterrecordActionPerformed
 
     private void newregActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newregActionPerformed
         MyKid mk = new MyKid();
-          mk.pack();
+        // mk.pack();
                 mk.setLocationRelativeTo(null);
                 mk.setVisible(true);
     }//GEN-LAST:event_newregActionPerformed
 
     private void viewprintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewprintActionPerformed
        PhyDenPrint pd = new PhyDenPrint();
-        pd.pack();
+//        pd.pack();
                 pd.setLocationRelativeTo(null);
                 pd.setVisible(true);
     }//GEN-LAST:event_viewprintActionPerformed
 
     private void listviewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listviewActionPerformed
       ListView lv = new ListView();
-        lv.pack();
+//        lv.pack();
                 lv.setLocationRelativeTo(null);
                 lv.setVisible(true);
     }//GEN-LAST:event_listviewActionPerformed
 
     private void newstaffbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newstaffbuttonActionPerformed
               AddStaff as = new AddStaff();
-          as.pack();
+//          as.pack();
                 as.setLocationRelativeTo(null);
                 as.setVisible(true);
+                this.dispose();
     }//GEN-LAST:event_newstaffbuttonActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Login ln = new Login();
-       ln.pack();
+//       ln.pack();
                 ln.setLocationRelativeTo(null);
                 ln.setVisible(true);
                 this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void editbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editbuttonActionPerformed
+       StudentInfoEdit sie = new StudentInfoEdit();
+//        sie.pack();
+                sie.setLocationRelativeTo(null);
+                sie.setVisible(true);
+    }//GEN-LAST:event_editbuttonActionPerformed
+
+    private void deletestaffbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletestaffbuttonActionPerformed
+         DeleteStaff ds = new DeleteStaff();
+//          ds.pack();
+                ds.setLocationRelativeTo(null);
+                ds.setVisible(true);
+                this.setVisible(false);
+    }//GEN-LAST:event_deletestaffbuttonActionPerformed
 
     /**
      * @param args the command line arguments
