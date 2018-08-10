@@ -8,6 +8,9 @@ package login;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -115,10 +118,12 @@ public class StudentInfo extends javax.swing.JFrame {
         jLabel2.setText("jLabel2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new java.awt.FlowLayout());
 
         jPanel1.setBackground(new java.awt.Color(102, 204, 0));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.setAutoscrolls(true);
 
         jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
         jScrollPane2.setToolTipText("");
@@ -224,8 +229,7 @@ public class StudentInfo extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(ystain)
                                 .addGap(18, 18, 18)
-                                .addComponent(nstain)
-                                .addGap(0, 0, Short.MAX_VALUE)))
+                                .addComponent(nstain)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -769,7 +773,23 @@ public class StudentInfo extends javax.swing.JFrame {
             
         }catch(Exception e){
         JOptionPane.showMessageDialog(null,e);
-        }
+        } finally{
+//           try {
+//               conn.close();
+//           } catch (SQLException ex) {
+//               Logger.getLogger(StudentInfo.class.getName()).log(Level.SEVERE, null, ex);
+//           }
+           try {
+               pst.close();
+           } catch (SQLException ex) {
+               Logger.getLogger(StudentInfo.class.getName()).log(Level.SEVERE, null, ex);
+           }
+           try {
+               rs.close();
+           } catch (SQLException ex) {
+               Logger.getLogger(StudentInfo.class.getName()).log(Level.SEVERE, null, ex);
+           }
+       }
                                      
     }//GEN-LAST:event_submitActionPerformed
 

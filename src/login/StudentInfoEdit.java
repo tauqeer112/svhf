@@ -8,6 +8,9 @@ package login;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -182,7 +185,10 @@ public class StudentInfoEdit extends javax.swing.JFrame {
         jLabel2.setText("jLabel2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new java.awt.FlowLayout());
+
+        maintab.setAutoscrolls(true);
 
         jPanel6.setBackground(new java.awt.Color(51, 153, 0));
 
@@ -623,7 +629,7 @@ public class StudentInfoEdit extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 893, Short.MAX_VALUE)
                             .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -728,20 +734,17 @@ public class StudentInfoEdit extends javax.swing.JFrame {
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel11Layout.createSequentialGroup()
-                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel11Layout.createSequentialGroup()
-                                        .addComponent(ycavity)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(ncavity))
-                                    .addGroup(jPanel11Layout.createSequentialGroup()
-                                        .addComponent(ycalculus)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(ncalculus))
-                                    .addGroup(jPanel11Layout.createSequentialGroup()
-                                        .addComponent(ymal)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(nmal)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(ycavity)
+                                .addGap(18, 18, 18)
+                                .addComponent(ncavity))
+                            .addGroup(jPanel11Layout.createSequentialGroup()
+                                .addComponent(ycalculus)
+                                .addGap(18, 18, 18)
+                                .addComponent(ncalculus))
+                            .addGroup(jPanel11Layout.createSequentialGroup()
+                                .addComponent(ymal)
+                                .addGap(18, 18, 18)
+                                .addComponent(nmal))
                             .addGroup(jPanel11Layout.createSequentialGroup()
                                 .addComponent(ystain)
                                 .addGap(18, 18, 18)
@@ -1213,6 +1216,24 @@ public class StudentInfoEdit extends javax.swing.JFrame {
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,e);
+        } finally{
+//            try {
+//                conn.close();
+//            } catch (SQLException ex) {
+//                Logger.getLogger(StudentInfoEdit.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+            try {
+                rs.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(StudentInfoEdit.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            try {
+                pst.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(StudentInfoEdit.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        
+        
         }
   
     }//GEN-LAST:event_displayrecActionPerformed
@@ -1330,6 +1351,23 @@ public class StudentInfoEdit extends javax.swing.JFrame {
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,e);
+        } finally{
+//                 try {
+//                     conn.close();
+//                 } catch (SQLException ex) {
+//                     Logger.getLogger(StudentInfoEdit.class.getName()).log(Level.SEVERE, null, ex);
+//                 }
+                 try {
+                     rs.close();
+                 } catch (SQLException ex) {
+                     Logger.getLogger(StudentInfoEdit.class.getName()).log(Level.SEVERE, null, ex);
+                 }
+                 try {
+                     pst.close();
+                 } catch (SQLException ex) {
+                     Logger.getLogger(StudentInfoEdit.class.getName()).log(Level.SEVERE, null, ex);
+                 }
+        
         }
 
          
@@ -1476,6 +1514,22 @@ public class StudentInfoEdit extends javax.swing.JFrame {
 
         }catch(Exception e){
             JOptionPane.showMessageDialog(null,e);
+        } finally{
+//            try {
+//                conn.close();
+//            } catch (SQLException ex) {
+//                Logger.getLogger(StudentInfoEdit.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+            try {
+                rs.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(StudentInfoEdit.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            try {
+                pst.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(StudentInfoEdit.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
 
     }//GEN-LAST:event_submitActionPerformed

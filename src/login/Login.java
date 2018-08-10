@@ -10,6 +10,8 @@ package login;
  * @author Tauqeer
  */
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
 public class Login extends javax.swing.JFrame {
     Connection conn = null;
@@ -302,6 +304,17 @@ public class Login extends javax.swing.JFrame {
             
         }catch(Exception e){
         JOptionPane.showMessageDialog(null,("username and password is incorrect"));
+        }finally{
+            try {
+                pst.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            try {
+                rs.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }//GEN-LAST:event_btn_loginActionPerformed
 

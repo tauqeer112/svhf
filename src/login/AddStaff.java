@@ -10,6 +10,8 @@ package login;
  * @author Tauqeer
  */
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
 public class AddStaff extends javax.swing.JFrame {
     Connection conn = null;
@@ -49,6 +51,7 @@ public class AddStaff extends javax.swing.JFrame {
         txt_username = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 0));
 
@@ -255,6 +258,22 @@ public class AddStaff extends javax.swing.JFrame {
             
         }catch(Exception e){
          JOptionPane.showMessageDialog(null,e);
+        }finally{
+            try {
+                conn.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(AddStaff.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            try {
+                pst.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(AddStaff.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            try {
+                rs.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(AddStaff.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }//GEN-LAST:event_btn_createActionPerformed
 

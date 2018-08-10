@@ -4,10 +4,10 @@
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>login.Info</class>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/svhf?zeroDateTimeBehavior=convertToNull"/>
-      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://den1.mysql4.gear.host:3306/svhf"/>
+      <property name="javax.persistence.jdbc.user" value="svhf"/>
       <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-      <property name="javax.persistence.jdbc.password" value="tauqeer"/>
+      <property name="javax.persistence.jdbc.password" value="tauqeer@112"/>
     </properties>
   </persistence-unit>
 </persistence>

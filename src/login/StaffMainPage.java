@@ -33,6 +33,11 @@ public class StaffMainPage extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        priviledge = new javax.swing.JLabel();
+        name = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        signout = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
         viewprintbutton = new javax.swing.JButton();
@@ -55,19 +60,59 @@ public class StaffMainPage extends javax.swing.JFrame {
         jPanel18 = new javax.swing.JPanel();
         editrecord3 = new javax.swing.JButton();
         viewreg = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
-        priviledge = new javax.swing.JLabel();
-        name = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        signout = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("EVERYTHING YOU NEED");
         setIconImages(null);
         setLocationByPlatform(true);
+        setResizable(false);
         setSize(new java.awt.Dimension(1230, 811));
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 0));
+        jPanel1.setAutoscrolls(true);
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI Symbol", 3, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 204, 255));
+        jLabel6.setText("Welcome as");
+        jPanel1.add(jLabel6);
+
+        priviledge.setFont(new java.awt.Font("Segoe UI Symbol", 3, 24)); // NOI18N
+        priviledge.setForeground(new java.awt.Color(0, 204, 255));
+        priviledge.setText("staff");
+        jPanel1.add(priviledge);
+
+        name.setFont(new java.awt.Font("Segoe UI Symbol", 3, 24)); // NOI18N
+        name.setForeground(new java.awt.Color(0, 204, 255));
+        name.setText("TAUQEER AKHTAR");
+        jPanel1.add(name);
+
+        jPanel2.setBackground(new java.awt.Color(0, 51, 204));
+        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+
+        signout.setBackground(new java.awt.Color(0, 51, 204));
+        signout.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        signout.setText("SIGN OUT");
+        signout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                signoutActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(signout, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(signout))
+        );
+
+        jPanel1.add(jPanel2);
 
         jPanel7.setBackground(new java.awt.Color(204, 255, 204));
         jPanel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -366,49 +411,6 @@ public class StaffMainPage extends javax.swing.JFrame {
         );
 
         jPanel1.add(jPanel7);
-
-        jLabel6.setFont(new java.awt.Font("Segoe UI Symbol", 3, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 204, 255));
-        jLabel6.setText("Welcome as");
-        jPanel1.add(jLabel6);
-
-        priviledge.setFont(new java.awt.Font("Segoe UI Symbol", 3, 24)); // NOI18N
-        priviledge.setForeground(new java.awt.Color(0, 204, 255));
-        priviledge.setText("staff");
-        jPanel1.add(priviledge);
-
-        name.setFont(new java.awt.Font("Segoe UI Symbol", 3, 24)); // NOI18N
-        name.setForeground(new java.awt.Color(0, 204, 255));
-        name.setText("TAUQEER AKHTAR");
-        jPanel1.add(name);
-
-        jPanel2.setBackground(new java.awt.Color(0, 51, 204));
-        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-
-        signout.setBackground(new java.awt.Color(0, 51, 204));
-        signout.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        signout.setText("SIGN OUT");
-        signout.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                signoutActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(signout, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(signout))
-        );
-
-        jPanel1.add(jPanel2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

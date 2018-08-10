@@ -8,7 +8,6 @@ package login;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.io.Serializable;
-import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,18 +15,14 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.persistence.Transient;
-import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author Tauqeer
  */
 @Entity
-@Table(name = "info")
-@XmlRootElement
+@Table(name = "info", catalog = "svhf", schema = "")
 @NamedQueries({
     @NamedQuery(name = "Info.findAll", query = "SELECT i FROM Info i")
     , @NamedQuery(name = "Info.findById", query = "SELECT i FROM Info i WHERE i.id = :id")
@@ -76,8 +71,7 @@ public class Info implements Serializable {
     @Column(name = "gender")
     private String gender;
     @Column(name = "dob")
-    @Temporal(TemporalType.DATE)
-    private Date dob;
+    private String dob;
     @Column(name = "stain")
     private String stain;
     @Column(name = "cavity")
@@ -186,12 +180,12 @@ public class Info implements Serializable {
         changeSupport.firePropertyChange("gender", oldGender, gender);
     }
 
-    public Date getDob() {
+    public String getDob() {
         return dob;
     }
 
-    public void setDob(Date dob) {
-        Date oldDob = this.dob;
+    public void setDob(String dob) {
+        String oldDob = this.dob;
         this.dob = dob;
         changeSupport.firePropertyChange("dob", oldDob, dob);
     }

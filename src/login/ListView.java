@@ -29,28 +29,25 @@ public class ListView extends javax.swing.JFrame {
         bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
         svhfPUEntityManager = java.beans.Beans.isDesignTime() ? null : javax.persistence.Persistence.createEntityManagerFactory("svhfPU").createEntityManager();
-        infoQuery = java.beans.Beans.isDesignTime() ? null : svhfPUEntityManager.createQuery("SELECT i FROM Info i");
-        infoList = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : infoQuery.getResultList();
         infoQuery1 = java.beans.Beans.isDesignTime() ? null : svhfPUEntityManager.createQuery("SELECT i FROM Info i");
         infoList1 = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : infoQuery1.getResultList();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jPanel1 = new javax.swing.JPanel();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel2 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        physical = new javax.swing.JTable();
-        jPanel3 = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        detal = new javax.swing.JTable();
+        jPanel4 = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        physical.setAutoCreateRowSorter(true);
-        physical.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 204, 153), 1, true));
-        physical.setForeground(new java.awt.Color(0, 0, 255));
-        physical.setGridColor(new java.awt.Color(0, 0, 0));
+        jScrollPane3.setAutoscrolls(true);
 
-        org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, infoList, physical);
+        jTable1.setAutoCreateRowSorter(true);
+        jTable1.setBackground(new java.awt.Color(204, 255, 204));
+        jTable1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jTable1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jTable1.setForeground(new java.awt.Color(0, 0, 204));
+        jTable1.setToolTipText("sort by clicking on column");
+
+        org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, infoList1, jTable1);
         org.jdesktop.swingbinding.JTableBinding.ColumnBinding columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${regno}"));
         columnBinding.setColumnName("Registration");
         columnBinding.setColumnClass(Long.class);
@@ -68,7 +65,7 @@ public class ListView extends javax.swing.JFrame {
         columnBinding.setColumnClass(String.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${dob}"));
         columnBinding.setColumnName("DOB");
-        columnBinding.setColumnClass(java.util.Date.class);
+        columnBinding.setColumnClass(String.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${height}"));
         columnBinding.setColumnName("Height");
         columnBinding.setColumnClass(Float.class);
@@ -84,83 +81,26 @@ public class ListView extends javax.swing.JFrame {
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${skin}"));
         columnBinding.setColumnName("Skin");
         columnBinding.setColumnClass(String.class);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${lefteye}"));
-        columnBinding.setColumnName("Left Eye");
-        columnBinding.setColumnClass(Float.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${righteye}"));
-        columnBinding.setColumnName("Right Eye");
+        columnBinding.setColumnName("Right eye");
+        columnBinding.setColumnClass(Float.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${lefteye}"));
+        columnBinding.setColumnName("Left eye");
         columnBinding.setColumnClass(Float.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${leftearwax}"));
-        columnBinding.setColumnName("Left Ear wax");
+        columnBinding.setColumnName("Left ear wax");
         columnBinding.setColumnClass(String.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${rightearwax}"));
-        columnBinding.setColumnName("Right Ear wax");
-        columnBinding.setColumnClass(String.class);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${pother}"));
-        columnBinding.setColumnName("Other");
+        columnBinding.setColumnName("Right ear wax");
         columnBinding.setColumnClass(String.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${padvice}"));
-        columnBinding.setColumnName("Advice");
+        columnBinding.setColumnName("Phy Advice");
         columnBinding.setColumnClass(String.class);
-        bindingGroup.addBinding(jTableBinding);
-        jTableBinding.bind();
-        jScrollPane1.setViewportView(physical);
-        if (physical.getColumnModel().getColumnCount() > 0) {
-            physical.getColumnModel().getColumn(0).setPreferredWidth(150);
-            physical.getColumnModel().getColumn(1).setPreferredWidth(150);
-            physical.getColumnModel().getColumn(2).setPreferredWidth(150);
-            physical.getColumnModel().getColumn(3).setPreferredWidth(75);
-            physical.getColumnModel().getColumn(4).setPreferredWidth(75);
-            physical.getColumnModel().getColumn(5).setPreferredWidth(150);
-            physical.getColumnModel().getColumn(9).setPreferredWidth(100);
-            physical.getColumnModel().getColumn(12).setPreferredWidth(150);
-            physical.getColumnModel().getColumn(13).setPreferredWidth(150);
-            physical.getColumnModel().getColumn(14).setPreferredWidth(150);
-            physical.getColumnModel().getColumn(15).setPreferredWidth(200);
-            physical.getColumnModel().getColumn(16).setPreferredWidth(200);
-        }
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1484, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 741, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("Physical Reports", jPanel2);
-
-        jScrollPane2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 153), 1, true));
-        jScrollPane2.setForeground(new java.awt.Color(0, 0, 204));
-
-        detal.setGridColor(new java.awt.Color(0, 0, 0));
-
-        jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, infoList1, detal);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${regno}"));
-        columnBinding.setColumnName("Registration");
-        columnBinding.setColumnClass(Long.class);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${teacher}"));
-        columnBinding.setColumnName("Teacher");
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${pother}"));
+        columnBinding.setColumnName("Phy Other");
         columnBinding.setColumnClass(String.class);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${stuname}"));
-        columnBinding.setColumnName("Name");
-        columnBinding.setColumnClass(String.class);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${class1}"));
-        columnBinding.setColumnName("Class");
-        columnBinding.setColumnClass(Integer.class);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${gender}"));
-        columnBinding.setColumnName("Gender");
-        columnBinding.setColumnClass(String.class);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${dob}"));
-        columnBinding.setColumnName("DOB");
-        columnBinding.setColumnClass(java.util.Date.class);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${stain}"));
-        columnBinding.setColumnName("Stain");
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${malocclusion}"));
+        columnBinding.setColumnName("Malocclusion");
         columnBinding.setColumnClass(String.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${cavity}"));
         columnBinding.setColumnName("Cavity");
@@ -168,56 +108,68 @@ public class ListView extends javax.swing.JFrame {
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${calculus}"));
         columnBinding.setColumnName("Calculus");
         columnBinding.setColumnClass(String.class);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${malocclusion}"));
-        columnBinding.setColumnName("Malocclusion");
-        columnBinding.setColumnClass(String.class);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${dother}"));
-        columnBinding.setColumnName("Other");
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${stain}"));
+        columnBinding.setColumnName("Stain");
         columnBinding.setColumnClass(String.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${dadvice}"));
-        columnBinding.setColumnName("Advice");
+        columnBinding.setColumnName("Dental Advice");
+        columnBinding.setColumnClass(String.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${dother}"));
+        columnBinding.setColumnName("Dental other");
         columnBinding.setColumnClass(String.class);
         bindingGroup.addBinding(jTableBinding);
         jTableBinding.bind();
-        jScrollPane2.setViewportView(detal);
+        jScrollPane4.setViewportView(jTable1);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setPreferredWidth(200);
+            jTable1.getColumnModel().getColumn(1).setPreferredWidth(200);
+            jTable1.getColumnModel().getColumn(2).setPreferredWidth(200);
+            jTable1.getColumnModel().getColumn(3).setPreferredWidth(200);
+            jTable1.getColumnModel().getColumn(4).setPreferredWidth(200);
+            jTable1.getColumnModel().getColumn(5).setPreferredWidth(200);
+            jTable1.getColumnModel().getColumn(6).setPreferredWidth(200);
+            jTable1.getColumnModel().getColumn(7).setPreferredWidth(200);
+            jTable1.getColumnModel().getColumn(8).setPreferredWidth(200);
+            jTable1.getColumnModel().getColumn(9).setPreferredWidth(200);
+            jTable1.getColumnModel().getColumn(10).setPreferredWidth(200);
+            jTable1.getColumnModel().getColumn(11).setPreferredWidth(200);
+            jTable1.getColumnModel().getColumn(12).setPreferredWidth(200);
+            jTable1.getColumnModel().getColumn(13).setPreferredWidth(300);
+            jTable1.getColumnModel().getColumn(14).setPreferredWidth(300);
+            jTable1.getColumnModel().getColumn(15).setPreferredWidth(300);
+            jTable1.getColumnModel().getColumn(16).setPreferredWidth(300);
+            jTable1.getColumnModel().getColumn(17).setPreferredWidth(200);
+            jTable1.getColumnModel().getColumn(18).setPreferredWidth(200);
+            jTable1.getColumnModel().getColumn(19).setPreferredWidth(200);
+            jTable1.getColumnModel().getColumn(20).setPreferredWidth(200);
+            jTable1.getColumnModel().getColumn(21).setPreferredWidth(300);
+            jTable1.getColumnModel().getColumn(22).setPreferredWidth(300);
+        }
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1486, Short.MAX_VALUE)
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1587, Short.MAX_VALUE)
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 741, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("Dental Reports", jPanel3);
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 834, Short.MAX_VALUE)
+                .addGap(31, 31, 31))
         );
 
-        jScrollPane3.setViewportView(jPanel1);
+        jScrollPane3.setViewportView(jPanel4);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 1514, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jScrollPane3)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 771, Short.MAX_VALUE)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         bindingGroup.bind();
@@ -261,19 +213,12 @@ public class ListView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable detal;
-    private java.util.List<login.Info> infoList;
     private java.util.List<login.Info> infoList1;
-    private javax.persistence.Query infoQuery;
     private javax.persistence.Query infoQuery1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable physical;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JTable jTable1;
     private javax.persistence.EntityManager svhfPUEntityManager;
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
