@@ -24,7 +24,7 @@ public class DeleteStaff extends javax.swing.JFrame {
      */
     public DeleteStaff() {
         initComponents();
-        conn = MysqlConnect.ConnectDB();
+        
     }
 
     /**
@@ -221,6 +221,7 @@ public class DeleteStaff extends javax.swing.JFrame {
 
     private void btn_createActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_createActionPerformed
         try{ 
+            conn = MysqlConnect.ConnectDB();
             String sql = "delete from login where username=?";
             pst = conn.prepareStatement(sql);
             pst.setString(1,txt_username.getText());
@@ -253,6 +254,11 @@ public class DeleteStaff extends javax.swing.JFrame {
             }
             try {
                 rs.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(DeleteStaff.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            try {
+                conn.close();
             } catch (SQLException ex) {
                 Logger.getLogger(DeleteStaff.class.getName()).log(Level.SEVERE, null, ex);
             }

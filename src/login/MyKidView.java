@@ -71,11 +71,11 @@ g2.setTransform(originalTransform);
 }
     public MyKidView() {
         initComponents();
-          Toolkit toolkit = Toolkit.getDefaultToolkit();
-Dimension d = toolkit.getScreenSize();
-
-this.setSize(d.width,d.height);
-         conn = MysqlConnect.ConnectDB();
+//          Toolkit toolkit = Toolkit.getDefaultToolkit();
+//Dimension d = toolkit.getScreenSize();
+//
+//this.setSize(d.width,d.height);
+        
     }
 
     /**
@@ -942,7 +942,7 @@ this.setSize(d.width,d.height);
     private void displayrecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayrecActionPerformed
 
         String reg = getreg.getText();
-        try {
+        try { conn = MysqlConnect.ConnectDB();
             String sql = "select * from registration where reg=?";
             pst = conn.prepareStatement(sql);
             pst.setString(1,reg);
@@ -1038,6 +1038,11 @@ this.setSize(d.width,d.height);
             }
             try {
                 pst.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(MyKidView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            try {
+                conn.close();
             } catch (SQLException ex) {
                 Logger.getLogger(MyKidView.class.getName()).log(Level.SEVERE, null, ex);
             }

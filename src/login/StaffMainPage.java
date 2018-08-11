@@ -15,7 +15,21 @@ package login;
  * @author Tauqeer
  */
 public class StaffMainPage extends javax.swing.JFrame {
-
+ MyKid mk = new MyKid();
+ StudentInfoEdit sie = new StudentInfoEdit();
+ PhyDenPrint pd = new PhyDenPrint();
+ ListView lv = new ListView();
+ StudentInfo si = new StudentInfo();
+  PhyDenDelete pddel = new PhyDenDelete();
+   PhyDenDelete pddel1 = new PhyDenDelete();
+    StudentInfo si1 = new StudentInfo();
+    MyKid mk1 = new MyKid();
+    PhyDenPrint pd1 = new PhyDenPrint();
+    MyKidView mkv1 = new MyKidView();
+     ListView lv1 = new ListView();
+     MyKidView mkv2 = new MyKidView();
+      Login ln1 = new Login();
+       StudentInfoEdit sie1 = new StudentInfoEdit();
     /**
      * Creates new form mainpage
      */
@@ -427,7 +441,7 @@ public class StaffMainPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void newregbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newregbuttonActionPerformed
-           MyKid mk = new MyKid();
+          
           mk.pack();
                 mk.setLocationRelativeTo(null);
                 mk.setVisible(true);
@@ -435,104 +449,104 @@ public class StaffMainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_newregbuttonActionPerformed
 
     private void editrecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editrecordActionPerformed
-         StudentInfoEdit sie = new StudentInfoEdit();
-        sie.pack();
+         
+//        sie.pack();
                 sie.setLocationRelativeTo(null);
                 sie.setVisible(true);
     }//GEN-LAST:event_editrecordActionPerformed
 
     private void viewprintbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewprintbuttonActionPerformed
-     PhyDenPrint pd = new PhyDenPrint();
-        pd.pack();
+     
+//        pd.pack();
                 pd.setLocationRelativeTo(null);
                 pd.setVisible(true);
     }//GEN-LAST:event_viewprintbuttonActionPerformed
 
     private void listviewbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listviewbuttonActionPerformed
-        ListView lv = new ListView();
-        lv.pack();
+        
+//        lv.pack();
                 lv.setLocationRelativeTo(null);
                 lv.setVisible(true);
     }//GEN-LAST:event_listviewbuttonActionPerformed
 
     private void enterrecordbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterrecordbuttonActionPerformed
-        StudentInfo si = new StudentInfo();
-          si.pack();
+        
+//          si.pack();
                 si.setLocationRelativeTo(null);
                 si.setVisible(true);
     }//GEN-LAST:event_enterrecordbuttonActionPerformed
 
     private void deleterecodbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleterecodbuttonActionPerformed
-        PhyDenDelete pddel = new PhyDenDelete();
-          pddel.pack();
+       
+//          pddel.pack();
                 pddel.setLocationRelativeTo(null);
                 pddel.setVisible(true);
     }//GEN-LAST:event_deleterecodbuttonActionPerformed
 
     private void deleterecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleterecordActionPerformed
-        PhyDenDelete pddel = new PhyDenDelete();
-          pddel.pack();
-                pddel.setLocationRelativeTo(null);
-                pddel.setVisible(true);
+       
+//          pddel1.pack();
+                pddel1.setLocationRelativeTo(null);
+                pddel1.setVisible(true);
     }//GEN-LAST:event_deleterecordActionPerformed
 
     private void enterrecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterrecordActionPerformed
-        StudentInfo si = new StudentInfo();
-          si.pack();
-                si.setLocationRelativeTo(null);
-                si.setVisible(true);
+       
+//          si1.pack();
+                si1.setLocationRelativeTo(null);
+                si1.setVisible(true);
     }//GEN-LAST:event_enterrecordActionPerformed
 
     private void newregActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newregActionPerformed
-        MyKid mk = new MyKid();
-          mk.pack();
-                mk.setLocationRelativeTo(null);
-                mk.setVisible(true);
+        
+//          mk1.pack();
+                mk1.setLocationRelativeTo(null);
+                mk1.setVisible(true);
     }//GEN-LAST:event_newregActionPerformed
 
     private void viewprintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewprintActionPerformed
-       PhyDenPrint pd = new PhyDenPrint();
-        pd.pack();
-                pd.setLocationRelativeTo(null);
-                pd.setVisible(true);
+       
+//        pd1.pack();
+                pd1.setLocationRelativeTo(null);
+                pd1.setVisible(true);
     }//GEN-LAST:event_viewprintActionPerformed
 
     private void listviewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listviewActionPerformed
-      ListView lv = new ListView();
-        lv.pack();
-                lv.setLocationRelativeTo(null);
-                lv.setVisible(true);
+     
+//        lv1.pack();
+                lv1.setLocationRelativeTo(null);
+                lv1.setVisible(true);
     }//GEN-LAST:event_listviewActionPerformed
 
     private void editrecord3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editrecord3ActionPerformed
-     MyKidView mkv = new MyKidView();
-       mkv.pack();
-                mkv.setLocationRelativeTo(null);
-                mkv.setVisible(true);
+     
+//       mkv1.pack();
+                mkv1.setLocationRelativeTo(null);
+                mkv1.setVisible(true);
     }//GEN-LAST:event_editrecord3ActionPerformed
 
     private void viewregActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewregActionPerformed
-      MyKidView mkv = new MyKidView();
-       mkv.pack();
-                mkv.setLocationRelativeTo(null);
-                mkv.setVisible(true);
+      
+//       mkv2.pack();
+                mkv2.setLocationRelativeTo(null);
+                mkv2.setVisible(true);
 
     }//GEN-LAST:event_viewregActionPerformed
 
     private void signoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signoutActionPerformed
-      Login ln = new Login();
-       ln.pack();
-                ln.setLocationRelativeTo(null);
-                ln.setVisible(true);
+     
+//       ln1.pack();
+                ln1.setLocationRelativeTo(null);
+                ln1.setVisible(true);
                 this.dispose();
       
     }//GEN-LAST:event_signoutActionPerformed
 
     private void editbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editbuttonActionPerformed
-        StudentInfoEdit sie = new StudentInfoEdit();
-        sie.pack();
-                sie.setLocationRelativeTo(null);
-                sie.setVisible(true);
+       
+//        sie1.pack();
+                sie1.setLocationRelativeTo(null);
+                sie1.setVisible(true);
     }//GEN-LAST:event_editbuttonActionPerformed
 
     /**

@@ -21,8 +21,20 @@ import javax.swing.JFrame;
  * @author Tauqeer
  */
 public class MainPage extends javax.swing.JFrame {
-    
-
+    ListView lv = new ListView();
+    MyKid mk = new MyKid();
+    StudentInfoEdit sie = new StudentInfoEdit();
+    PhyDenPrint pd = new PhyDenPrint();
+    StudentInfo si = new StudentInfo();
+     AddStaff as = new AddStaff();
+     DeleteStaff ds = new DeleteStaff();
+     PhyDenDelete pddel = new PhyDenDelete();
+     StudentInfo si1 = new StudentInfo();
+     PhyDenPrint pd1 = new PhyDenPrint();
+     Login ln = new Login();
+     MyKid mk1 = new MyKid();
+     AddStaff as1 = new AddStaff();
+     StudentInfoEdit sie1 = new StudentInfoEdit();
     /**
      * Creates new form mainpage
      */
@@ -490,7 +502,7 @@ public class MainPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void newregbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newregbuttonActionPerformed
-           MyKid mk = new MyKid();
+           
 //          mk.pack();
                 mk.setLocationRelativeTo(null);
                 mk.setVisible(true);
@@ -498,31 +510,30 @@ public class MainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_newregbuttonActionPerformed
 
     private void editrecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editrecordActionPerformed
-       StudentInfoEdit sie = new StudentInfoEdit();
 //        sie.pack();
                 sie.setLocationRelativeTo(null);
                 sie.setVisible(true);
     }//GEN-LAST:event_editrecordActionPerformed
 
     private void viewprintbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewprintbuttonActionPerformed
-     PhyDenPrint pd = new PhyDenPrint();
+     
 //        pd.pack();
                 pd.setLocationRelativeTo(null);
                 pd.setVisible(true);
     }//GEN-LAST:event_viewprintbuttonActionPerformed
 
     private void listviewbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listviewbuttonActionPerformed
-        ListView lv = new ListView();
+//        ListView lv = new ListView();
 //        lv.pack();
                 lv.setLocationRelativeTo(null);
                 lv.setVisible(true);
     }//GEN-LAST:event_listviewbuttonActionPerformed
 
     private void enterrecordbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterrecordbuttonActionPerformed
-        StudentInfo si = new StudentInfo();
+        
 //          si.pack();
-                si.setLocationRelativeTo(null);
-                si.setVisible(true);
+                si1.setLocationRelativeTo(null);
+                si1.setVisible(true);
     }//GEN-LAST:event_enterrecordbuttonActionPerformed
 
     private void deleterecodbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleterecodbuttonActionPerformed
@@ -530,7 +541,7 @@ public class MainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_deleterecodbuttonActionPerformed
 
     private void newstaffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newstaffActionPerformed
-       AddStaff as = new AddStaff();
+      
 //          as.pack();
                 as.setLocationRelativeTo(null);
                 as.setVisible(true);
@@ -538,7 +549,7 @@ public class MainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_newstaffActionPerformed
 
     private void deletestaffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletestaffActionPerformed
-        DeleteStaff ds = new DeleteStaff();
+        
 //          ds.pack();
                 ds.setLocationRelativeTo(null);
                 ds.setVisible(true);
@@ -546,50 +557,50 @@ public class MainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_deletestaffActionPerformed
 
     private void deleterecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleterecordActionPerformed
-         PhyDenDelete pddel = new PhyDenDelete();
+         
 //          pddel.pack();
                 pddel.setLocationRelativeTo(null);
                 pddel.setVisible(true);
     }//GEN-LAST:event_deleterecordActionPerformed
 
     private void enterrecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterrecordActionPerformed
-        StudentInfo si = new StudentInfo();
+        
 //          si.pack();
                 si.setLocationRelativeTo(null);
                 si.setVisible(true);
     }//GEN-LAST:event_enterrecordActionPerformed
 
     private void newregActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newregActionPerformed
-        MyKid mk = new MyKid();
+        
         // mk.pack();
-                mk.setLocationRelativeTo(null);
-                mk.setVisible(true);
+                mk1.setLocationRelativeTo(null);
+                mk1.setVisible(true);
     }//GEN-LAST:event_newregActionPerformed
 
     private void viewprintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewprintActionPerformed
-       PhyDenPrint pd = new PhyDenPrint();
+       
 //        pd.pack();
-                pd.setLocationRelativeTo(null);
-                pd.setVisible(true);
+                pd1.setLocationRelativeTo(null);
+                pd1.setVisible(true);
     }//GEN-LAST:event_viewprintActionPerformed
 
     private void listviewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listviewActionPerformed
-      ListView lv = new ListView();
+      
 //        lv.pack();
                 lv.setLocationRelativeTo(null);
                 lv.setVisible(true);
     }//GEN-LAST:event_listviewActionPerformed
 
     private void newstaffbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newstaffbuttonActionPerformed
-              AddStaff as = new AddStaff();
+              
 //          as.pack();
-                as.setLocationRelativeTo(null);
-                as.setVisible(true);
+                as1.setLocationRelativeTo(null);
+                as1.setVisible(true);
                 this.dispose();
     }//GEN-LAST:event_newstaffbuttonActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Login ln = new Login();
+        
 //       ln.pack();
                 ln.setLocationRelativeTo(null);
                 ln.setVisible(true);
@@ -597,10 +608,10 @@ public class MainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void editbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editbuttonActionPerformed
-       StudentInfoEdit sie = new StudentInfoEdit();
+       
 //        sie.pack();
-                sie.setLocationRelativeTo(null);
-                sie.setVisible(true);
+                sie1.setLocationRelativeTo(null);
+                sie1.setVisible(true);
     }//GEN-LAST:event_editbuttonActionPerformed
 
     private void deletestaffbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletestaffbuttonActionPerformed

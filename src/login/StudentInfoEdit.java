@@ -25,7 +25,7 @@ public class StudentInfoEdit extends javax.swing.JFrame {
     
     public StudentInfoEdit() {
         initComponents();
-        conn = MysqlConnect.ConnectDB();
+        
     }
 
     /**
@@ -1147,7 +1147,7 @@ public class StudentInfoEdit extends javax.swing.JFrame {
          
         maintab.setSelectedIndex(1);
         String rega = getreg.getText();
-        try {
+        try {conn = MysqlConnect.ConnectDB();
             String sql = "select * from info where regno=?";
             pst = conn.prepareStatement(sql);
             pst.setString(1,rega);
@@ -1229,6 +1229,11 @@ public class StudentInfoEdit extends javax.swing.JFrame {
             }
             try {
                 pst.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(StudentInfoEdit.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            try {
+                conn.close();
             } catch (SQLException ex) {
                 Logger.getLogger(StudentInfoEdit.class.getName()).log(Level.SEVERE, null, ex);
             }

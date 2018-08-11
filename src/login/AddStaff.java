@@ -24,7 +24,7 @@ public class AddStaff extends javax.swing.JFrame {
      */
     public AddStaff() {
         initComponents();
-        conn = MysqlConnect.ConnectDB();
+       
     }
 
     /**
@@ -236,6 +236,7 @@ public class AddStaff extends javax.swing.JFrame {
 
     private void btn_createActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_createActionPerformed
         try{ 
+            conn = MysqlConnect.ConnectDB();
             String sql = "insert into login(username,password,priviledge) values(?,?,?)";
             pst = conn.prepareStatement(sql);
             pst.setString(1,txt_username.getText());
@@ -271,6 +272,11 @@ public class AddStaff extends javax.swing.JFrame {
             }
             try {
                 rs.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(AddStaff.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            try {
+                conn.close();
             } catch (SQLException ex) {
                 Logger.getLogger(AddStaff.class.getName()).log(Level.SEVERE, null, ex);
             }

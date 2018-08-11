@@ -73,7 +73,7 @@ g2.setTransform(originalTransform);
      */
     public PhyDenPrint() {
         initComponents();
-        conn = MysqlConnect.ConnectDB();
+        
     }
 
     /**
@@ -886,7 +886,7 @@ g2.setTransform(originalTransform);
                 .addGroup(physicalformLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 1024, Short.MAX_VALUE))
                 .addContainerGap())
         );
         physicalformLayout.setVerticalGroup(
@@ -961,7 +961,7 @@ g2.setTransform(originalTransform);
     private void displayrecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayrecActionPerformed
               
         String reg = getreg.getText();
-        try {
+        try {conn = MysqlConnect.ConnectDB();
              String sql = "select * from info where regno=?";
              pst = conn.prepareStatement(sql);
              pst.setString(1,reg);
@@ -1038,11 +1038,11 @@ g2.setTransform(originalTransform);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,e);
         }finally{
-//            try {
-//                conn.close();
-//            } catch (SQLException ex) {
-//                Logger.getLogger(PhyDenPrint.class.getName()).log(Level.SEVERE, null, ex);
-//            }
+            try {
+                conn.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(PhyDenPrint.class.getName()).log(Level.SEVERE, null, ex);
+            }
             try {
                 rs.close();
             } catch (SQLException ex) {

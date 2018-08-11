@@ -71,7 +71,7 @@ g2.setTransform(originalTransform);
      */
     public PhyDenDelete() {
         initComponents();
-        conn = MysqlConnect.ConnectDB();
+
     }
 
     /**
@@ -972,7 +972,7 @@ g2.setTransform(originalTransform);
     private void displayrecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayrecActionPerformed
               
         String reg = getreg.getText();
-        try {
+        try {        conn = MysqlConnect.ConnectDB();
              String sql = "select * from info where regno=?";
              pst = conn.prepareStatement(sql);
              pst.setString(1,reg);
@@ -1064,13 +1064,18 @@ g2.setTransform(originalTransform);
             } catch (SQLException ex) {
                 Logger.getLogger(PhyDenDelete.class.getName()).log(Level.SEVERE, null, ex);
             }
+            try {
+                conn.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(PhyDenDelete.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         
         
     }//GEN-LAST:event_displayrecActionPerformed
 
     private void ddeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ddeleteActionPerformed
-       try{ 
+       try{         conn = MysqlConnect.ConnectDB();
             String sql = "delete from info where regno=?";
             pst = conn.prepareStatement(sql);
             pst.setString(1,getreg.getText());
@@ -1090,7 +1095,24 @@ g2.setTransform(originalTransform);
             
         }catch(Exception e){
          JOptionPane.showMessageDialog(null,e);
-        }
+        }finally{
+           try {
+               pst.close();
+           } catch (SQLException ex) {
+               Logger.getLogger(PhyDenDelete.class.getName()).log(Level.SEVERE, null, ex);
+           }
+           try {
+               rs.close();
+           } catch (SQLException ex) {
+               Logger.getLogger(PhyDenDelete.class.getName()).log(Level.SEVERE, null, ex);
+           }
+           try {
+               conn.close();
+           } catch (SQLException ex) {
+               Logger.getLogger(PhyDenDelete.class.getName()).log(Level.SEVERE, null, ex);
+           }
+       }
+       
     }//GEN-LAST:event_ddeleteActionPerformed
 
     private void getregActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_getregActionPerformed
@@ -1098,7 +1120,7 @@ g2.setTransform(originalTransform);
     }//GEN-LAST:event_getregActionPerformed
 
     private void pdeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pdeleteActionPerformed
-       try{ 
+       try{         conn = MysqlConnect.ConnectDB();
             String sql = "delete from info where regno=?";
             pst = conn.prepareStatement(sql);
             pst.setString(1,getreg.getText());
@@ -1126,6 +1148,11 @@ g2.setTransform(originalTransform);
            }
            try {
                rs.close();
+           } catch (SQLException ex) {
+               Logger.getLogger(PhyDenDelete.class.getName()).log(Level.SEVERE, null, ex);
+           }
+           try {
+               conn.close();
            } catch (SQLException ex) {
                Logger.getLogger(PhyDenDelete.class.getName()).log(Level.SEVERE, null, ex);
            }

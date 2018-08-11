@@ -25,7 +25,7 @@ public class StudentInfo extends javax.swing.JFrame {
     
     public StudentInfo() {
         initComponents();
-        conn = MysqlConnect.ConnectDB();
+        
     }
 
     /**
@@ -647,7 +647,7 @@ public class StudentInfo extends javax.swing.JFrame {
     }//GEN-LAST:event_nstainActionPerformed
 
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
-       try{ 
+       try{ conn = MysqlConnect.ConnectDB();
             
             String gen = null;
             String stain = null;
@@ -786,6 +786,11 @@ public class StudentInfo extends javax.swing.JFrame {
            }
            try {
                rs.close();
+           } catch (SQLException ex) {
+               Logger.getLogger(StudentInfo.class.getName()).log(Level.SEVERE, null, ex);
+           }
+           try {
+               conn.close();
            } catch (SQLException ex) {
                Logger.getLogger(StudentInfo.class.getName()).log(Level.SEVERE, null, ex);
            }

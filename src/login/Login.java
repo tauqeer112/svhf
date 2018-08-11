@@ -18,13 +18,14 @@ public class Login extends javax.swing.JFrame {
     PreparedStatement pst = null;
     ResultSet rs = null;
     
+    
 
     /**
      * Creates new form Login
      */
     public Login() {
         initComponents();
-        conn = MysqlConnect.ConnectDB();
+        
         
        this.pack();
        this.setLocationRelativeTo(null);
@@ -270,7 +271,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_priviledgeActionPerformed
 
     private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
-        try{ 
+        try{ conn = MysqlConnect.ConnectDB();
             String sql = "select * from login where username =? and password=? and priviledge=? ";
             pst = conn.prepareStatement(sql);
             pst.setString(1,txt_username.getText());
@@ -281,8 +282,10 @@ public class Login extends javax.swing.JFrame {
             
             if (rs.next()) {
                 this.setVisible(false);
+                
                 if("STAFF".equals(priviledge))
                 {
+                
                 StaffMainPage mp = new StaffMainPage();
                 mp.name.setText(txt_username.getText());
                 mp.pack();
@@ -297,8 +300,9 @@ public class Login extends javax.swing.JFrame {
                 amp.setVisible(true);
                 }
                 
+                
             } else {
-                JOptionPane.showMessageDialog(null,("username and password is incorrect"));
+               
             }
             
             
@@ -312,6 +316,11 @@ public class Login extends javax.swing.JFrame {
             }
             try {
                 rs.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            try {
+                conn.close();
             } catch (SQLException ex) {
                 Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
             }

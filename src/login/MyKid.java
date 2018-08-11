@@ -32,7 +32,7 @@ public class MyKid extends javax.swing.JFrame {
 //          int width = d.width;
 //          int height = d.height;
 //         this.setSize(width,height);
-         conn = MysqlConnect.ConnectDB();
+         
     }
 
     /**
@@ -735,6 +735,7 @@ public class MyKid extends javax.swing.JFrame {
 
     private void submitregActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitregActionPerformed
         try{
+            conn = MysqlConnect.ConnectDB();
             String gen = null;
             String diabe = null;
             String spolio = null;
@@ -837,6 +838,11 @@ public class MyKid extends javax.swing.JFrame {
             }
             try {
                 pst.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(MyKid.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            try {
+                conn.close();
             } catch (SQLException ex) {
                 Logger.getLogger(MyKid.class.getName()).log(Level.SEVERE, null, ex);
             }
