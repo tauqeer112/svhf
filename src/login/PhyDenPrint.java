@@ -886,8 +886,7 @@ g2.setTransform(originalTransform);
                 .addGroup(physicalformLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 1024, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
         );
         physicalformLayout.setVerticalGroup(
             physicalformLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -916,23 +915,22 @@ g2.setTransform(originalTransform);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(physicalform, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
-                        .addGap(929, 929, 929)
-                        .addComponent(pprint, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(270, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(physicalform, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(282, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(pprint, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(404, 404, 404))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(physicalform, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pprint)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
         maintab.addTab("Physical Report", jPanel4);
@@ -981,9 +979,9 @@ g2.setTransform(originalTransform);
              
               String class1 = rs.getString("class");
              pclass.setText(class1);
-             dname.setText(class1);
+             dclass.setText(class1);
               String name = rs.getString("stuname");
-             dteacher.setText(name);
+             dname.setText(name);
              pname.setText(name);
               String birth = rs.getString("dob");
              pdob.setText(birth);
@@ -992,11 +990,11 @@ g2.setTransform(originalTransform);
              pgender.setText(gender);
              dgender.setText(gender);
              String stn = rs.getString("stain");
-             calculus.setText(stn);
+             stain.setText(stn);
              String ht = rs.getString("height");
              height.setText(ht);
              String cav = rs.getString("cavity");
-             cavity.setText(stn);
+             cavity.setText(cav);
              String wt = rs.getString("weight");
              weight.setText(wt);
              String poth = rs.getString("pother");
@@ -1020,7 +1018,7 @@ g2.setTransform(originalTransform);
              String reye = rs.getString("righteye");
              righteye.setText(reye);
              String skn = rs.getString("skin");
-             abdomen.setText(skn);
+             skin1.setText(skn);
                 
              
              
